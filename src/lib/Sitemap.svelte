@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
+  import { page } from '$app/stores';
   const pages = [
     { route: '/', name: 'Home' },
     { route: '/about', name: 'About' },
     { route: '/blog', name: 'Blog' }
   ];
 
-  const currentPath = '/'; // TODO
+  const currentPath = $page.url.pathname;
 
   const getLinkStyle = (route) =>
     `inline-block py-2 text-xs ${
