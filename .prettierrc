@@ -8,7 +8,7 @@
     {
       "files": "*.svelte",
       "options": {
-        "svelteAllowShorthand": false,
+        "svelteAllowShorthand": true,
         "svelteSortOrder": "options-scripts-styles-markup",
         "plugins": ["prettier-plugin-svelte"]
       }

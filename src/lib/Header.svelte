@@ -1,7 +1,7 @@
 <script>
   import SocialIcons from '$lib/SocialIcons.svelte';
   import Sitemap from '$lib/Sitemap.svelte';
-  import {  siteMetadata, icons } from '$lib/metadata';
+  import {  siteMetadata, icons } from '$lib/content/meta';
 </script>
 
 <div class="block mb-6 md:flex">
