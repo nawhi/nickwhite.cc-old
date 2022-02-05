@@ -1,12 +1,11 @@
-<script lang="ts">
+<script>
   import Layout from '$lib/Layout.svelte';
   import Header from '$lib/Header.svelte';
 
   const { title, date, description } = $$restProps;
 
-  const formattedDate: string | undefined = (() => {
+  const formattedDate = (() => {
     const d = new Date(date);
-    // noinspection TypeScriptValidateTypes - doesn't recognise dateStyle option for some reason
     return d.getTime()
       ? new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(d)
       : undefined;
