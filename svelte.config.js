@@ -20,6 +20,13 @@ const config = {
     adapter: adapter(),
     files: {
       hooks: 'src/hooks'
+    },
+    browser: { hydrate: true },
+    prerender: {
+      crawl: true,
+      enabled: true,
+      onError: 'fail',
+      entries: ['*']
     }
   }
 };
