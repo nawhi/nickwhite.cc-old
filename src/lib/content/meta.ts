@@ -8,6 +8,6 @@ export const siteMetadata = {
 };
 
 export const icons = [
-  { name: 'GitHub profile', icon: '/static/img/github-icon.png', link: siteMetadata.github },
-  { name: 'LinkedIn profile', icon: '/static/img/linkedin-icon.png', link: siteMetadata.linkedin }
+  { name: 'GitHub profile', icon: '/img/github-icon.png', link: siteMetadata.github },
+  { name: 'LinkedIn profile', icon: '/img/linkedin-icon.png', link: siteMetadata.linkedin }
 ];

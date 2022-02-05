@@ -45,7 +45,7 @@ test.ts:3:18 - error TS2551: Property 'firstName' does not exist on
 
 If you are using an integrated development environment (IDE), it'll probably get surfaced even sooner - almost as soon as you've typed it - with a red squiggly line underneath the offending typo.
 
-![IDE highlighting of a TypeScript compilation error](/static/img/highlighted-compilation-error.png)
+![IDE highlighting of a TypeScript compilation error](/img/highlighted-compilation-error.png)
 
 So TypeScript can statically catch a whole class of errors, where in JavaScript you'd have had to run the code to find them. 
 
@@ -141,7 +141,7 @@ There's no field called `phone_number`. D'oh.
 
 From a developer perspective, the API response was pretty clear, so we could find our error quite easily. And most IDEs will show you what fields are available with an intention action on the result:
 
-![IDE showing autocomplete with possible fields matching 'phone'](/static/img/phone-number-intention.png)
+![IDE showing autocomplete with possible fields matching 'phone'](/img/phone-number-intention.png)
 
 But unless you're exceptionally careful, you'll probably still get tripped up by this now and then. 
 
@@ -194,13 +194,13 @@ In plain English, here's what we're telling the compiler:
 
 This will work nicely - not only will you get compile-time errors if you misspell a field, but many IDEs will now also give you autocomplete in the `fields` array!
 
-![IDE screenshot with autocomplete dropdown in the fields parameter](/static/img/fields-parameter-autocomplete.png)
+![IDE screenshot with autocomplete dropdown in the fields parameter](/img/fields-parameter-autocomplete.png)
 
 ## Supporting the all-fields case
 
 It's worth noting one potential drawback of this code. If you give an empty array as the `fields` parameter, TypeScript will infer (admittedly in a slightly cryptic way) that the resulting details object has no accessible fields:
 
-![Compilation error and odd type deduction on passing an empty fields array](/static/img/place-details-with-empty-fields-array-error.png)
+![Compilation error and odd type deduction on passing an empty fields array](/img/place-details-with-empty-fields-array-error.png)
 
 Empty arrays are of type `never[]`, and `Partial<PlaceData>` is the SDK's internal alias for `Place`, so this is equivalent to picking nothing out of `Place` - i.e. an empty object (`{}`).
 
@@ -223,7 +223,7 @@ class GoogleMapsClient {
 
 But this causes more problems than it solves. TypeScript now complains if you give it a variable rather than an array literal, and with a pretty cryptic error to boot.
 
-![Compilation error trying to pass an extracted variable as the fields parameter](/static/img/fields-as-variadic-tuple-error.png)
+![Compilation error trying to pass an extracted variable as the fields parameter](/img/fields-as-variadic-tuple-error.png)
 
 So let's back that out and leave it how it was!
 

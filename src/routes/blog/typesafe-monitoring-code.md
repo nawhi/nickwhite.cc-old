@@ -9,7 +9,7 @@ After spending some time at the start of my career working on user interfaces, I
 
 As a really simple example, if the user has to enter an ISO currency code, a plain text box would suffice:
 
-![Plain text box for entering a currency code](/static/img/currency-text-box.png)
+![Plain text box for entering a currency code](/img/currency-text-box.png)
 
 But if you misremembered or mistyped the currency code, you wouldn't know until whatever was behind the text box told you (or until you submitted the form; or maybe not at all).
 
@@ -17,7 +17,7 @@ Even if the UI surfaces an error message when the currency is incorrect, you sti
 
 Instead, you could provide a searchable list of currencies:
 
-![A currency selector dropdown](/static/img/currency-dropdown.png)
+![A currency selector dropdown](/img/currency-dropdown.png)
 
 This restricts the input to only acceptable values as early as physically possible - before the user has typed anything at all - but not so early that you get an error before you've even finished typing, which is also very annoying.
 

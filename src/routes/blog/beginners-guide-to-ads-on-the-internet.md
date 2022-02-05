@@ -21,7 +21,7 @@ Do this right now before reading number 2.
 
 When you run an ad blocker, you'll notice that everything loads and runs much faster, because ad scripts place load on your browser. You may also feel less tired after a session on the internet, because it has become easier to focus without being semi-distracted by noisy background ads.
 
-![Brave Shields in action on the Daily Mail website](/static/img/dailymail-brave-shields.png)
+![Brave Shields in action on the Daily Mail website](/img/dailymail-brave-shields.png)
 
 ## Step 2: Opt out of personalised advertising
 
@@ -103,29 +103,29 @@ Click on each image to see a full-size version.
 ---
 
 In the Gmail app (not all of these are actual emails!):
-![Sponsored ads in the Gmail app](/static/img/gmail-sponsored-ads.png)
+![Sponsored ads in the Gmail app](/img/gmail-sponsored-ads.png)
 
 ---
 
 Google Maps makes it insanely difficult to spot sponsored results. Here, the Tesco Express pin is actually an ad - it's a slightly more prominent square icon, instead of the round pin. The clue is the small Tesco ad at the top-left, which _is_ marked "Ad". ([source](https://www.google.com/maps/search/food+shop/@51.4140281,-0.0679134,15z/data=!4m2!2m1!6e6!5m1!1e4))#
-![Sponsored results for a gym search on Google Maps](/static/img/google-maps-sponsored-result.png)
+![Sponsored results for a gym search on Google Maps](/img/google-maps-sponsored-result.png)
 
 ---
 
 On a Google search for clothing ([source](https://www.google.com/search?q=slim+fit+t-shirts)):
-![Sponsored results on a Google search](/static/img/google-sponsored-search-results.png)
+![Sponsored results on a Google search](/img/google-sponsored-search-results.png)
 
 ---
 
 On a search for opinions rather than facts ([source](https://duckduckgo.com/?q=how+often+should+you+work+out&t=h_&ia=web)):
-![Sponsored results on a DuckDuckGo search](/static/img/duckduckgo-sponsored-search-results.png)
+![Sponsored results on a DuckDuckGo search](/img/duckduckgo-sponsored-search-results.png)
 
 ---
 
 On a news website - and a great example of how not all sponsored content is bad ([source](https://theguardian.com)):
-![Sponsored content on the Guardian](/static/img/guardian-sponsored-content.png)
+![Sponsored content on the Guardian](/img/guardian-sponsored-content.png)
 
 ---
 
 On a food blog ([source](https://toriavey.com/toris-kitchen/lemon-ginger-cider-vinegar-infusion/)):
-![Amazon affiliate links on a food blog](/static/img/amazon-affiliate.png)
+![Amazon affiliate links on a food blog](/img/amazon-affiliate.png)
