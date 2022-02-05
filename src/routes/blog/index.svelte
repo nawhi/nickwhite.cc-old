@@ -10,7 +10,7 @@
   import Layout from '$lib/Layout.svelte';
   import Header from '$lib/Header.svelte';
   import Section from '$lib/Section.svelte';
-  import SummaryItem from '$lib/SummaryItem.svelte';
+  import PostList from '$lib/PostList.svelte';
 
   export let posts: Post[];
 
@@ -20,8 +20,6 @@
 <Layout>
   <Header />
   <Section title="All Blog Posts">
-    {#each postsToShow as { title, href, description }}
-      <SummaryItem name={title} link={href} shortDesc={description} />
-      {/each}
+    <PostList posts={postsToShow} />
   </Section>
 </Layout>
