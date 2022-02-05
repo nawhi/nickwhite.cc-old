@@ -4,8 +4,10 @@
   import Section from '$lib/Section.svelte';
   import { about } from '$lib/content/about';
   import SummaryItem from '$lib/SummaryItem.svelte';
+  import PageTitle from '$lib/PageTitle.svelte';
 </script>
 
+<PageTitle title='About'/>
 <Layout>
   <Header />
   <Section title="About Me">

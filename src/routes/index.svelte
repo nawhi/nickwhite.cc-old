@@ -2,10 +2,12 @@
   import Section from '$lib/Section.svelte';
   import Layout from '$lib/Layout.svelte';
   import Header from '$lib/Header.svelte';
+  import PageTitle from '$lib/PageTitle.svelte';
 </script>
 
+<PageTitle title='Home'/>
 <Layout>
-  <Header/>
+  <Header />
   <Section title="About Me">
     <div class="mb-6">
       <p>

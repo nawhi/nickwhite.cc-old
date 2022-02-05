@@ -1,7 +1,7 @@
 export const about = {
   siteUrl: 'https://nickwhite.cc',
   name: 'Nick White',
-  title: 'Nick White',
+  pageTitle: 'Nick White',
   description: 'Software Engineer from London, UK.',
   github: 'https://github.com/nawhi',
   linkedin: 'https://www.linkedin.com/in/nick9white/',
