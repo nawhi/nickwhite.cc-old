@@ -141,7 +141,7 @@ There's no field called `phone_number`. D'oh.
 
 From a developer perspective, the API response was pretty clear, so we could find our error quite easily. And most IDEs will show you what fields are available with an intention action on the result:
 
-![IDE showing autocomplete with possible fields matching "phone"](/static/img/phone-number-intention.png)
+![IDE showing autocomplete with possible fields matching 'phone'](/static/img/phone-number-intention.png)
 
 But unless you're exceptionally careful, you'll probably still get tripped up by this now and then. 
 
