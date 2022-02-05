@@ -7,9 +7,10 @@ unlisted: true
 
 I love the internet - I work in tech, after all, so I make my living from and on it. But maybe you share a nagging feeling I have, that my phone and computer are using me as much as I am using them.
 
-If so, here are some simple steps you can do regardless of technical experience to bring your internet life back to a healthier place. 
+If so, here are some simple steps you can do regardless of technical experience to bring your internet life back to a healthier place.
 
 ## Step 1: Install an ad blocker
+
 This is the single best way to improve your internet experience. If you do nothing else, do this!
 
 **_Your task:_ Install and start using [Brave Browser](https://brave.com/), on desktop and mobile.** Brave is almost identical to Chrome, but has built-in industrial-strength ad, tracking, and cookie blockers through its Shields feature.
@@ -23,6 +24,7 @@ When you run an ad blocker, you'll notice that everything loads and runs much fa
 ![Brave Shields in action on the Daily Mail website](/static/img/dailymail-brave-shields.png)
 
 ## Step 2: Opt out of personalised advertising
+
 All ad companies are legally required to have an anonymous mode in which they collect no data about you. They are often buried in the settings, but they're always there and able to be turned on.
 
 **_Your task:_ Do both of the following -**
@@ -36,6 +38,7 @@ When you went into Google Ad Settings, you probably saw the section where Google
 Want to go further? Consider switching to a privacy-focused search engine like [Startpage](https://startpage.com), [Brave Search](https://search.brave.com) or [DuckDuckGo](https://duckduckgo.com). None of these collect nearly as much intrusive data about you as Bing or Google, at the cost of search results that are occasionally less useful.
 
 ## Step 3: Learn to spot ads
+
 Traditional media like a newspaper, TV and radio generally make it very clear what's an ad and what isn't. Tech companies, on the other hand, have exploited the internet's comparative lack of regulation to become very, _very_ good at disguising sponsorship.
 
 **_Your task:_ When browsing the internet, ask yourself: what on this page is an advertisement?**
@@ -43,7 +46,7 @@ Traditional media like a newspaper, TV and radio generally make it very clear wh
 Ad blockers don’t block everything. You will still see:
 
 - _sponsored search results_ designed to look like bona-fide search results, but which were actually paid for instead of being organically relevant to your query
-- _sponsored content_ also known as "natural ads", these are bits of the webpage styled to look like the regular page/blog/recipe/article but which were actually paid for 
+- _sponsored content_ also known as "natural ads", these are bits of the webpage styled to look like the regular page/blog/recipe/article but which were actually paid for
 - _affiliate links_ links to products from otherwise impartial blogs and news articles that will earn the host a small commission if you buy the product
 
 Try it out: see if you can spot the ads in the examples in the [appendix](#ads).
@@ -51,20 +54,21 @@ Try it out: see if you can spot the ads in the examples in the [appendix](#ads).
 (If you have kids, teach them too: social media is especially rife with disguised affiliate programs aimed at teenagers and young adults. For more info, read the UK Advertising Standards Authority's [Influencer monitoring report](https://www.asa.org.uk/resource/influencer-monitoring-report-march-2021.html).)
 
 ## Step 5: Understand what a good search looks like
+
 By now, you'll be good at spotting what is an ad, and what is not, when using search engines.
 
 Unfortunately, even if you only use these non-ad search results (known as "organic" search results), the way that these results are served to you are still highly influenced by factors that probably don’t align with your objectives.
 
 For instance, Google Maps results are ranked in part by how often the business owner updates their opening times. Useful, sure - but when I'm looking for breakfast, I care enough about it being tasty that I'd rather take a risk on a cafe not being open.
 
-**_Your task:_ Use search engines for facts, not for opinions.** 
+**_Your task:_ Use search engines for facts, not for opinions.**
 
 This is best demonstrated by example.
 
 Searches that the internet is absolutely ideal for:
 
-_"Pharmacy near Woking station open now"_<br/> 
-_"Bicycle hire in London"_<br/> 
+_"Pharmacy near Woking station open now"_<br/>
+_"Bicycle hire in London"_<br/>
 _"What country are peacocks native to"_<br/>
 _"Diameter of Jupiter"_
 
@@ -79,10 +83,10 @@ These will probably get you to a solution, but you may have to trawl through a l
 
 Searches that the internet is terrible for:
 
-_"Mental health support"._ 
+_"Mental health support"._
 Google's highest result for this term is a company offering paid therapy. If you are desperate, you will forget to filter out ads, and end up getting sold something when you could have got help for free. In the UK, the Samaritans can be contacted on 116 123.
 
-_"The best Chinese restaurant in Bedford"._  Reviews are SO gameable - that's an article for another time. Plus, ironically, when everyone searches for "the best X", they all pile in to just a few restaurants - which stresses the restaurants' capacity and usually makes the experience worse. You'll know this if you've ever been to a "viral brunch spot", queued for hours, then actually had a pretty average meal.
+_"The best Chinese restaurant in Bedford"._ Reviews are SO gameable - that's an article for another time. Plus, ironically, when everyone searches for "the best X", they all pile in to just a few restaurants - which stresses the restaurants' capacity and usually makes the experience worse. You'll know this if you've ever been to a "viral brunch spot", queued for hours, then actually had a pretty average meal.
 
 _“How to lose weight / gain muscle / learn Spanish / etc fast”._ You can’t do any of these things fast, and you probably know that. By definition, then, the results will mostly be snake oil.
 
@@ -90,9 +94,7 @@ _“Should I take Ritalin”,_ or other medical advice. Ask a GP instead, or fil
 
 A bad search meets any of the following criteria: (1) there could be a substantial risk of harm if the results are incorrect or misleading; (2) you are not in a frame of mind where you can critically interpret the results; (3) you would spend less time figuring the result out if you just used your own intuition and problem-solving skills.
 
-<a name="ads"></a>
-
-## Appendix: Examples of ads across the internet
+<h2 id='ads'>Appendix: Examples of ads across the internet</h2>
 
 In the examples below, can you find all the ads?
 
@@ -127,5 +129,3 @@ On a news website - and a great example of how not all sponsored content is bad 
 
 On a food blog ([source](https://toriavey.com/toris-kitchen/lemon-ginger-cider-vinegar-infusion/)):
 ![Amazon affiliate links on a food blog](/static/img/amazon-affiliate.png)
-
-
