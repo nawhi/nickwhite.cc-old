@@ -105,7 +105,7 @@ In the Gmail app (not all of these are actual emails!):
 
 ---
 
-Google Maps makes it insanely difficult to spot sponsored results. Here, the Tesco Express pin is actually an ad - it's a slightly more prominent square icon, instead of the round pin. The clue is the small Tesco ad at the top-left, which _is_ marked "Ad". ([source](https://www.google.com/maps/search/food+shop/@51.4140281,-0.0679134,15z/data=!4m2!2m1!6e6!5m1!1e4))
+Google Maps makes it insanely difficult to spot sponsored results. Here, the Tesco Express pin is actually an ad - it's a slightly more prominent square icon, instead of the round pin. The clue is the small Tesco ad at the top-left, which _is_ marked "Ad". ([source](https://www.google.com/maps/search/food+shop/@51.4140281,-0.0679134,15z/data=!4m2!2m1!6e6!5m1!1e4))#
 ![Sponsored results for a gym search on Google Maps](/static/img/google-maps-sponsored-result.png)
 
 ---
