@@ -5,7 +5,7 @@
   export let name: string,
     shortDesc: string | string[],
     link: string | undefined,
-    longDesc: string[] | undefined;
+    longDesc: string[] | undefined = undefined;
 </script>
 
 <div class="mb-6">
