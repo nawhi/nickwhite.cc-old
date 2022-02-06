@@ -7,10 +7,10 @@
 </script>
 
 <script lang="ts">
-  import Layout from '$lib/Layout.svelte';
-  import Header from '$lib/Header.svelte';
-  import Section from '$lib/Section.svelte';
-  import PostList from '$lib/PostList.svelte';
+  import Layout from '$lib/components/Layout.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Section from '$lib/components/Section.svelte';
+  import PostList from '$lib/components/PostList.svelte';
 
   export let posts: Post[];
 

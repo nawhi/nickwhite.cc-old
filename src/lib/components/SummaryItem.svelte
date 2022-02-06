@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Link from '$lib/Link.svelte';
+  import Link from '$lib/components/Link.svelte';
   import { toArray } from '$lib/utils/toArray';
 
   export let name: string,

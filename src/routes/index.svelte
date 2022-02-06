@@ -7,11 +7,11 @@
 </script>
 
 <script lang="ts">
-  import Section from '$lib/Section.svelte';
-  import Layout from '$lib/Layout.svelte';
-  import Header from '$lib/Header.svelte';
-  import PageTitle from '$lib/PageTitle.svelte';
-  import PostList from '$lib/PostList.svelte';
+  import Section from '$lib/components/Section.svelte';
+  import Layout from '$lib/components/Layout.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import PageTitle from '$lib/components/PageTitle.svelte';
+  import PostList from '$lib/components/PostList.svelte';
 
   export let posts: Post[];
 </script>

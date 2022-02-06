@@ -1,12 +1,12 @@
 <script>
-  import SocialIcons from '$lib/SocialIcons.svelte';
-  import Sitemap from '$lib/Sitemap.svelte';
+  import SocialIcons from '$lib/components/SocialIcons.svelte';
+  import Sitemap from '$lib/components/Sitemap.svelte';
   import { siteMetadata, icons } from '$lib/content/meta';
 </script>
 
 <div class="block mb-6 md:flex">
   <div class="w-full max-w-150">
-    <a href="/">
+    <a href='/'>
       <img
         src="/img/profile.jpg"
         alt={siteMetadata.name}
@@ -16,7 +16,7 @@
   </div>
   <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20">
     <h1 class="text-5xl text-gray-900 font-bold leading-tight hover:text-block">
-      <a href="/">{siteMetadata.name}</a>
+      <a href='/'>{siteMetadata.name}</a>
     </h1>
     <p class="text-gray-700">{siteMetadata.description}</p>
     <SocialIcons {icons} />

@@ -1,6 +1,6 @@
 <script>
-  import Layout from '$lib/Layout.svelte';
-  import Header from '$lib/Header.svelte';
+  import Layout from '$lib/components/Layout.svelte';
+  import Header from '$lib/components/Header.svelte';
 
   const { title, date, description } = $$restProps;
 

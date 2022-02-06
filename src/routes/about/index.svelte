@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Layout from '$lib/Layout.svelte';
-  import Header from '$lib/Header.svelte';
-  import Section from '$lib/Section.svelte';
+  import Layout from '$lib/components/Layout.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Section from '$lib/components/Section.svelte';
   import { about } from '$lib/content/about';
-  import SummaryItem from '$lib/SummaryItem.svelte';
-  import PageTitle from '$lib/PageTitle.svelte';
+  import SummaryItem from '$lib/components/SummaryItem.svelte';
+  import PageTitle from '$lib/components/PageTitle.svelte';
 </script>
 
 <PageTitle title='About'/>
