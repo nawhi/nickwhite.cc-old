@@ -40,3 +40,5 @@ jobs:
 
       - name: Deploy to Firebase
         run: pnpm firebase --project nick-white-cc --token "$FIREBASE_TOKEN" deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
