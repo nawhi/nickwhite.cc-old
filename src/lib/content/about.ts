@@ -13,8 +13,8 @@ export const about = {
   projects: [
     {
       name: 'This website!',
-      description: 'Built with Gatsby and Tailwind CSS, based on a template by Ryan Fitzgerald',
-      link: '/'
+      description: 'Built with SvelteKit and Tailwind CSS, based on a template by Ryan Fitzgerald',
+      link: 'https://github.com/nawhi/nickwhite.cc'
     },
     {
       name: 'jq-tutorial',
