@@ -39,4 +39,4 @@ jobs:
           pnpm run build
 
       - name: Deploy to Firebase
-        run: pnpm firebase --token "$FIREBASE_TOKEN" deploy
+        run: pnpm firebase --project nick-white-cc --token "$FIREBASE_TOKEN" deploy
