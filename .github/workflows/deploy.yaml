@@ -13,23 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: pnpm
-
-      - name: Setup pnpm and install global packages
+      - name: Setup pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.29.1
           run_install: |
             - args: [--frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Install and build
-        run: |
-          pnpm install
-          pnpm run build
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+
+      - name: Build
+        run: pnpm run build
 
       - name: Deploy to Firebase
         run: pnpm firebase --project nick-white-cc --token "$FIREBASE_TOKEN" deploy
