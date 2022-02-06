@@ -12,11 +12,11 @@
 </script>
 
 <Header />
-<h1 class="mt-16 text-4xl text-gray-900 font-bold">{title}</h1>
-<p class="text-gray-700 font-light">
+<h1 class="mt-12 text-4xl text-gray-900 font-bold">{title}</h1>
+<p class="text-gray-700 font-light pt-1.5">
   Posted on {formattedDate}
 </p>
 
-<div class="mt-16 blog-content">
+<div class="mt-12 blog-content">
   <slot />
 </div>
