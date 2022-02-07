@@ -5,11 +5,11 @@ description: A neat way to improve developer experience with the power of TypeSc
 ---
 
 ## Introduction
-In tech, user experience is king. Apps need to work, sure, but to be really valuable, they also needs to be easy and even delightful to use.  
+In tech, user experience is king. Apps need to work, sure, but to be really valuable, they must also be easy and pleasant to use.  
 
-The users of the app aren't just its customers, though, and the user interface isn't just the frontend. The first, the last, and the most frequent users of software systems are the engineers that built it. The user interface that engineers use is the code itself.
+Something people often forget is that the first, the last, and the most frequent users of software systems are the engineers that built it.
 
-How could we borrow from the principles of user interface design to make working with our Developer Interface - that is, the codebase - a more efficient and fulfilling experience?
+Can we borrow from the principles of customer-facing user interface design to make working with our Developer Interface - that is, the codebase - a more efficient and fulfilling experience?
 
 ## Errors in JavaScript and TypeScript 
 
@@ -55,9 +55,7 @@ Already, that's a big bump in developer experience - but it's hugely more powerf
 
 Google Maps have a handy API which allows you to programmatically fetch all sorts of data for a particular place pin on Google Maps.
 
-However, Google prohibits clients from storing any of this API's data - instead, you must store the Place ID and re-fetch the data each time you need it.
-
-Let's use [Google's Node.js SDK](https://github.com/googlemaps/google-maps-services-js), wrapped in a helper class for clarity, to get the address from the place ID for Buckingham Palace (a large house in London where the Queen lives.)
+Let's use [Google's Node.js SDK](https://github.com/googlemaps/google-maps-services-js), wrapped in a helper class for clarity, to get the address from the place ID for Buckingham Palace, which is a large house in London where the Queen lives.
 
 ```typescript
 import { Client, Place } from '@googlemaps/google-maps-services-js';
@@ -79,11 +77,9 @@ class GoogleMapsClient {
 }
 ```
 
-The `getPlaceDetails` method takes a Place ID and an array of fields, and returns the Places API response.
+This API has one quirk. It is billed per field, per entry, and its default behaviour is to return _everything_ that Google knows about a place. Unless you have recently closed a Series A, you'll probably want to tell it upfront which fields you need.
 
-The `fields` parameter is a list of fields we want the API to return. This is important because the API is billed per field, and its default behaviour without `fields` is to return everything.
-
-This is how we'd use our client to get the address:
+For instance, this is how we'd use our client to get the address:
 
 ```typescript
 const buckinghamPalace = 'ChIJtV5bzSAFdkgRpwLZFPWrJgo';
