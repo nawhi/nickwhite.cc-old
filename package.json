@@ -1,6 +1,7 @@
 {
 	"name": "nickwhite.cc",
 	"version": "0.0.1",
+        "license": "SEE LICENSE IN LICENSE.md",
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"dev": "svelte-kit dev",
