@@ -1,17 +1,14 @@
 ---
 title: A brief introduction to JavaScript build tools
 date: 2022-01-16
-description: Confused by the world of frontend build tools? You will probably still be after reading this article.
-draft: true
-# TODO:
-# - [ ] defs
+description: Confused by the world of frontend build tools? You will still be after reading this article.
 ---
 
 ## Introduction
 
-Having started my career in C/C++ and server-side Java, I had a late introduction to the front-end of the web. One of the things that I found hardest to get my head around was what happened when you "ran the build". Trying to understand the output of this cryptic `npm run build` command felt like learning programming all over again.
+Having started my career in C/C++ and server-side Java, I had a late introduction to the front-end of the web. One of the things that I found hardest to get my head around was what happened when you "ran the build" on a client-side project. Trying to understand the output of this cryptic `npm run build` command felt like learning programming all over again.
 
-Worse was trying to understand the errors that would happen when you hadn't configured your app correctly. Hours and hours of unexpected tokens. And then when you got it to build... `Cannot find module`... `Cannot read property 'e' of undefined`. Gah.  
+Worse was trying to understand the errors that would happen when you hadn't configured your app correctly. Hours and hours of unexpected tokens. And then when you got it to build: `Cannot find module`. Gah.  
 
 Years on and I'm starting to get a handle on how it all works, and just as important, why it is the way it is. This article is a short introduction to what I've learned.
 
@@ -21,24 +18,14 @@ For the purposes of this article, a _build tool_ is a piece of software that tak
 
 This decouples the development environment of the code from the way browsers and the Internet work, so that the developers can write better code, and modularise their code, more easily.
 
-This leads to a few definitions.
+## Definitions
+Here are some terms that will be useful in understanding build tools.
 
-[//]: # (<!-- TODO turn this into a <Def/> component -->)
-
-[//]: # ()
-[//]: # (| Term                | Definition                                                                                                                                                                                    |)
-
-[//]: # (|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|)
-
-[//]: # (| **Build tool**      | A piece of software that transforms source code into a browser-ready bundle                                                                                                                   |)
-
-[//]: # (| **Bundle**          | The result of running the build tool: one or many files that represent all of the assets needed to run the application compressed together in a way that the target browsers will understand. |)
-
-[//]: # (| **Target browsers** | The browsers &#40;or the version of JavaScript that runs on the browsers&#41; that the bundle should run correctly on.                                                                                |)
-
-[//]: # (| **Source code**     | The code that developers edit that makes up the web application, including static assets.                                                                                                     |)
-
-[//]: # (| **Assets**          | One of the files that make up a bundle. Could be JavaScript, CSS, images, videos, JSON, or something else.                                                                                    |)
+- **Build tool**: A piece of software that transforms source code into a browser-ready bundle
+- **Bundle**: The result of running the build tool: one or many files that represent all the assets needed to run the application compressed together in a way
+- **Target browsers**: The browsers (or the version of JavaScript that runs on the browsers) that the bundle should run correctly on.
+- **Source code**: The code that developers edit that makes up the web application, including static assets.
+- **Assets**: One of the files that make up a bundle. Could be JavaScript, CSS, images, videos, JSON, or something else.                                      
 
 ## What does a build tool do?
 
@@ -60,6 +47,10 @@ One other thing build tools do is generate **source maps**, which allow you to c
 
 ## Examples
 
-This separation into steps is a bit academic. Each step is rarely used on its own - nearly every build tool uses a combination. 
+This separation into steps is a bit academic. Each step is rarely used on its own - nearly every build tool uses a combination.
 
-A companion to this article is a repository (TODO LINK) with a bunch of examples, which are designed to be a bit easier to separate all the different features from the average production app.  
+Besides, the best way to get familiar with this stuff is to explore lots of examples!
+
+So the rest of this article takes the form of a Git repository with a bunch of examples, designed to be vaguely real-world relevant but contrived to make sure they're a bit easier to understand than the average production app.  
+
+[Visit the repository now!](https://github.com/nawhi/js-build-examples) 
