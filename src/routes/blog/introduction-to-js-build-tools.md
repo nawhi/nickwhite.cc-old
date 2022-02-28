@@ -1,6 +1,6 @@
 ---
 title: A brief introduction to JavaScript build tools
-date: 2022-01-16
+date: 2022-02-28
 description: Confused by the world of frontend build tools? You will still be after reading this article.
 ---
 
