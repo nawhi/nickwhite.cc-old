@@ -1,16 +1,5 @@
 <script context="module" lang="ts">
   import type { ErrorLoad } from '@sveltejs/kit';
-
-  const getExtra = (status: number): string => {
-    if (status >= 500) {
-      return 'There was an unexpected error, please try again later.';
-    }
-    if (status === 404) {
-      return "You just hit a route that doesn't exist.";
-    }
-    return '';
-  };
-
   export const load: ErrorLoad = ({ error: { message }, status }) => {
     if (status >= 500) {
       return {

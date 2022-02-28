@@ -1,5 +1,6 @@
 <script>
   import Header from '$lib/components/Header.svelte';
+  import PageTitle from "$lib/components/PageTitle.svelte";
 
   const { title, date, description } = $$restProps;
 
@@ -11,7 +12,8 @@
   })();
 </script>
 
-<Header />
+<PageTitle {title}/>
+<Header image={false} />
 <h1 class="mt-12 text-4xl text-gray-900 font-bold">{title}</h1>
 <p class="text-gray-700 font-light pt-1.5">
   Posted on {formattedDate}
