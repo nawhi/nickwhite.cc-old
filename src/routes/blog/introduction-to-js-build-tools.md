@@ -21,11 +21,12 @@ This decouples the development environment of the code from the way browsers and
 ## Definitions
 Here are some terms that will be useful in understanding build tools.
 
-- **Build tool**: A piece of software that transforms source code into a browser-ready bundle
-- **Bundle**: The result of running the build tool: one or many files that represent all the assets needed to run the application compressed together in a way
+- **Build tool**: A piece of software that transforms source code into a bundle.
+- **Bundle**: One or many files that represent all the assets needed to run the application, compressed or linked together in a way that the target browsers can execute correctly.
 - **Target browsers**: The browsers (or the version of JavaScript that runs on the browsers) that the bundle should run correctly on.
-- **Source code**: The code that developers edit that makes up the web application, including static assets.
-- **Assets**: One of the files that make up a bundle. Could be JavaScript, CSS, images, videos, JSON, or something else.                                      
+- **Source code**: The code that developers edit that makes up the web application, including static assets. This is normally checked into version control, where the build is normally not.
+- **Build**: This is a single run of the build tool to create a bundle. Builds should be deterministic: given the same input, a build tool should always produce the same output.
+- **Asset**: One of the files that make up a bundle. Could be HTML, JavaScript, CSS, images, videos, JSON, text, or something else. Also often called a "static asset" where "static" means available on the client (e.g. via a CDN), as opposed to needing a custom application server.                                      
 
 ## What does a build tool do?
 
@@ -39,11 +40,11 @@ Most build tools have a handful of different jobs.
 
 4. **Bundle**: link all the files needed to run the web app together - source code, images, CSS, and third-party libraries - then output them as a single file or several files linked together in a way the target browser will understand
 
-6. **Optimise**: Improve the performance of the bundle
+6. **Optimise**: Improve the performance of the bundle, for instance by minifying the code in it
 
 7. **Obfuscate**: Make it harder to reverse-engineer any IP in the bundle
 
-One other thing build tools do is generate **source maps**, which allow you to cross-reference errors thrown in the bundled code with the site of the error in the original source. I don't understand them yet so I've ignored them here. Maybe there'll be another article on it soon.
+One other thing build tools do is generate **source maps**, which allow you to cross-reference errors thrown in the bundled code with the site of the error in the original source. I don't understand them well enough to write about yet. Maybe there'll be another article on it soon.
 
 ## Examples
 
