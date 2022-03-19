@@ -21,36 +21,38 @@
   }
 </style>
 
-<div class="p-1 flex-row">
-  <form
-    on:submit|preventDefault={(e) => {
-      const formData = new FormData(e.target);
-      ready = true;
-      number1 = parseInt(formData.get('number1'));
-      number2 = parseInt(formData.get('number2'));
-    }}
-  >
-    <input
-      type="number"
-      id="num1"
-      name="number1"
-      required
-      placeholder="Enter an integer"
-      min="0"
-      step="1"
-    />
-    <code class="px-5">&amp;</code>
-    <input
-      type="number"
-      id="num2"
-      name="number2"
-      required
-      placeholder="Enter an integer"
-      min="0"
-      step="1"
-    />
-    <button type="submit" class="mx-5">Go</button>
-  </form>
+<div class="flex flex-col items-center">
+  <div class="p-1 flex-row">
+    <form
+      on:submit|preventDefault={(e) => {
+        const formData = new FormData(e.target);
+        ready = true;
+        number1 = parseInt(formData.get('number1'));
+        number2 = parseInt(formData.get('number2'));
+      }}
+    >
+      <input
+        type="number"
+        id="num1"
+        name="number1"
+        required
+        placeholder="Enter an integer"
+        min="0"
+        step="1"
+      />
+      <code class="px-5">&amp;</code>
+      <input
+        type="number"
+        id="num2"
+        name="number2"
+        required
+        placeholder="Enter an integer"
+        min="0"
+        step="1"
+      />
+      <button type="submit" class="mx-5">Go</button>
+    </form>
+  </div>
 </div>
 {#if ready}
   <div class="py-5" />
