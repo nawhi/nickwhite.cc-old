@@ -37,29 +37,32 @@ export const about = {
       name: 'Triptease',
       description: ['Senior Software Engineer, 2021 - pres.', 'Software Engineer, 2020 - 2021'],
       link: 'https://triptease.com',
+      technologies: ['Node.js', 'Terraform', 'React.js', 'TypeScript'],
       bio: [
-        'Triptease makes SaaS products to help hoteliers increase their direct bookings. We work in autonomous cross-functional "squads" with full responsibility for full-stack development, testing, deployment, and monitoring.',
-        'From summer 2020 to summer 2021, we built a feed of hotel prices to Google Hotel Ads and scaled it from scratch to over 1,000 hotels, serving a million prices a day. The prices come from on-site user tracking, screen-scraping and algorithmic inference.',
-        'We are currently working on customisable on-site messages (e.g. showing a discount code to searchers who may have seen a cheaper price elsewhere). The work involves the UI of the messages themselves, the database where they are stored and data engineering to analyse and report on their performance.'
+        'Built a feed of hotel prices and scaled it from scratch to serving a million prices a day from over 1,000 hotels. The prices were sourced from user tracking, screen-scraping and algorithmic inference.',
+        'Currently working on a customisable on-site messages tool.',
+        'Triptease engineers work full-stack, including all development, ops and SRE, in small autonomous squads.'
       ]
     },
     {
       name: 'Codurance',
       description: ['Software Craftsman, 2019', 'Apprentice, 2018 - 2019'],
       link: 'https://codurance.com',
+      technologies: ['C++', 'Java', 'PostgreSQL'],
       bio: [
-        'I worked in a team of consultants at a fintech specialising in white-label corporate payments solutions. We set up and improved CI pipelines, scripted common SRE/maintenance tasks, and helped build new microservices. We also advised on best practices such as hexagonal architecture, TDD and pair programming.',
-        'Before Bankable, I completed a three-month Apprenticeship Program (now Codurance Academy), learning essential skills in software design, XP practices, Clean Code, and Domain-Driven Design.'
+        'Worked in a team of consultants at a fintech, setting up CI pipelines, modernising existing C++ server-side infrastructure, and helping to build new Java microservices.',
+        'As Apprentice, completed a three-month program (now Codurance Academy) learning essential skills in software design, Extreme Programming practices, Clean Code, and Domain-Driven Design.'
       ]
     },
     {
       name: 'FilmLight',
       description: ['Software Developer, 2017 - 2018', 'Intern, 2016 - 2017'],
       link: 'https://filmlight.ltd.uk',
+      technologies: ['C', 'C++', '*nix'],
       bio: [
-        "FilmLight produces colour grading systems for film & TV post-production. I designed and ran usability tests for the systems' control surfaces, capturing user behaviour with key-logging software and using the data to identify and resolve usability bottlenecks. I also worked on the controls' C++ display driver to improve its refresh rate and responsiveness.",
-        'I wrote an xUnit-style unit test framework for the Perl-like in-house scripting language (ICI) used for most frontend code.',
-        'Before starting as software engineer, I interned for 6 months as an assistant in automated testing and helped maintain the FilmLight intranet, whilst teaching myself to code using MIT OpenCourseWare courses.'
+        'Worked on hardware interfaces on a film post-processing system, full-stack from usability testing and UI implementation, down to optimising the display drivers.',
+        'Wrote an xUnit-style unit test framework for the in-house scripting language ICI (similar to Perl or early JavaScript - see http://atrn.org/ici/).',
+        'As an intern, built automated testing harnesses, helped maintain the FilmLight intranet, and built PCs for developer use.'
       ]
     }
   ],

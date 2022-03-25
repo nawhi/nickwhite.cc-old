@@ -14,8 +14,8 @@
   {/each}
 </Section>
 <Section title="Experience">
-  {#each about.experience as { name, link, description, bio }}
-    <SummaryItem {name} {link} longDesc={bio} shortDesc={description} />
+  {#each about.experience as { name, link, technologies, description, bio }}
+    <SummaryItem {name} {link} longDesc={bio} shortDesc={description} tags={technologies} />
   {/each}
 </Section>
 <Section title="Projects">
