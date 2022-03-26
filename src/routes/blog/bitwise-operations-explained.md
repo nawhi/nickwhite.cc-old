@@ -6,16 +6,17 @@ draft: true
 ---
 
 <script>
-  import BitwiseOperations from '$lib/widgets/bitwise/index.svelte';
+  import BitwiseOperation from '$lib/blog/bitwise-operations-explained/BitwiseOperation.svelte';
+  import BinaryToDecimal from '$lib/blog/bitwise-operations-explained/BinaryToDecimal.svelte';
 </script>
 
-**TLDR:** Go to the [animations](#animation).
+**TLDR:** Play with the [animations](#animation) further down.
 
 ## Introduction
 
-Generally, if you do all your programming in high-level languages like Python or JavaScript (or even Java), you'll rarely need to go much lower.
+Generally, if you do all your programming in high-level languages like Python or JavaScript (or even Java), you'll rarely need to go that far into the way the underlying tech works. The programming language is usually a good enough abstraction.
 
-That said, it is occasionally useful to understand what binary is, and how to use it. For instance, it reduces this [Allergies kata](https://www.codewars.com/kata/58be35e9e36224a33f000023/python) from a maths-laden mega-algorithm to a single operation.
+That said, it is occasionally useful to understand what binary is, and how to use it. For example (in fact the motivation for this post), bitwise operations can reduce this [Allergies kata](https://www.codewars.com/kata/58be35e9e36224a33f000023/python) from a maths-laden mega-algorithm to a couple of lines.
 
 ## Binary numbers
 
@@ -43,6 +44,8 @@ To disambiguate between decimal and binary, you might see the binary number pref
 
 
 If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two:
+
+<BinaryToDecimal/>
 
 ```
 ANIMATION HERE
@@ -85,7 +88,7 @@ Since each digit takes only two values, we can use Boolean operators (AND, OR, N
 This yields surprising but interesting results. To see it in action, have a go below.
 
 
-<BitwiseOperations/>
+<BitwiseOperation/>
 
 ## Why would you do this?
 
