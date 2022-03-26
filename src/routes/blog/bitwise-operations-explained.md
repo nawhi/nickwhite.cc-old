@@ -45,7 +45,6 @@ To disambiguate between decimal and binary, you might see the binary number pref
 
 If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two:
 
-<BinaryToDecimal/>
 
 ```
 ANIMATION HERE
@@ -67,15 +66,9 @@ Going the other way is a lot easier. Just sum up the powers of two that have a `
 
 It's often easier to count from the right when doing this.
 
-```
-ANIMATION HERE
-0b1011011
-
-From the right hand side:
-0b1011011
-= 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 + 1*2^4 + 0*2^5 + 1*2^6
-=   1   +   2  +   0   +   8   +  16   +   0   +  64
-```
+<div style="height: 200px">
+  <BinaryToDecimal/>
+</div>
 
 For me it was quite interesting seeing how any number could be decomposed into powers of two - a bit like a really simple Fourier transform.
 
