@@ -1,30 +1,37 @@
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import Section from '$lib/components/Section.svelte';
-  import { about } from '$lib/content/about';
+  import { about as content } from '$lib/content/about';
   import SummaryItem from '$lib/components/SummaryItem.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
+
+  const { about, education, experience, projects, skills } = content;
 </script>
 
 <PageTitle title="About" />
 <Header />
 <Section title="About Me">
-  {#each about.about as line}
+  {#each about as line}
     <p class="mb-3">{line}</p>
   {/each}
 </Section>
 <Section title="Experience">
-  {#each about.experience as { name, link, technologies, description, bio }}
-    <SummaryItem {name} {link} longDesc={bio} shortDesc={description} tags={technologies} />
+  {#each experience as { name, link, technologies, description, bio }}
+    <SummaryItem {name} {link} shortDesc={description} longDesc={bio} tags={technologies} />
+  {/each}
+</Section>
+<Section title="Education">
+  {#each education as { name, link, description, bio }}
+    <SummaryItem {name} {link} shortDesc={description} longDesc={bio} />
   {/each}
 </Section>
 <Section title="Projects">
-  {#each about.projects as { name, link, description }}
+  {#each projects as { name, link, description }}
     <SummaryItem {name} {link} shortDesc={description} />
   {/each}
 </Section>
 <Section title="Skills">
-  {#each about.skills as { name, link, description }}
+  {#each skills as { name, link, description }}
     <SummaryItem {name} {link} shortDesc={description} />
   {/each}
 </Section>

@@ -85,6 +85,21 @@ export const about = {
       name: 'Methodologies',
       description: 'Extreme Programming, Software Craftsmanship, Continuous Discovery'
     }
+  ],
+  education: [
+    {
+      name: 'Open University',
+      description: 'Mathematics modules, part-time, 2022-present',
+      bio: [
+        'Currently studying MST124 Essential Mathematics 1.',
+        'Planning to progress to MST224 Mathematical Methods in autumn 2022.'
+      ]
+    },
+    {
+      name: 'University of Oxford',
+      description: 'BA Music, 2013 - 2016',
+      bio: 'First-class honours; academic scholar, 2014-16.'
+    }
   ]
 };
 
