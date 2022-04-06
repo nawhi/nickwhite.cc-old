@@ -13,7 +13,8 @@ export const about = {
   projects: [
     {
       name: 'This website!',
-      description: 'Built with SvelteKit and Tailwind CSS, based on a template by Ryan Fitzgerald',
+      description:
+        'Built with SvelteKit and Tailwind CSS, based on the devfolio template by Ryan Fitzgerald',
       link: 'https://github.com/nawhi/nickwhite.cc'
     },
     {
@@ -37,10 +38,10 @@ export const about = {
       name: 'Triptease',
       description: ['Senior Software Engineer, 2021 - pres.', 'Software Engineer, 2020 - 2021'],
       link: 'https://triptease.com',
-      technologies: ['Node.js', 'Terraform', 'React.js', 'TypeScript'],
+      technologies: ['Node.js', 'Terraform', 'React.js', 'TypeScript', 'MongoDB'],
       bio: [
-        'Built a feed of hotel prices and scaled it from scratch to serving a million prices a day from over 1,000 hotels. The prices were sourced from user tracking, screen-scraping and algorithmic inference.',
-        'Currently working on a customisable on-site messages tool.',
+        'We are currently working on the Targeted Messages product, including the UI of the messages themselves, a rich content editor with live preview for message creation, content database and CDN, event tracking and analytics platform.',
+        'Previously, we built a feed of hotel prices and scaled it from scratch to serving a million prices a day from over 1,000 hotels. The prices were sourced from user tracking, screen-scraping and algorithmic inference.',
         'Triptease engineers work full-stack, including all development, ops and SRE, in small autonomous squads.'
       ]
     },
@@ -50,8 +51,8 @@ export const about = {
       link: 'https://codurance.com',
       technologies: ['C++', 'Java', 'PostgreSQL'],
       bio: [
-        'Worked in a team of consultants at a fintech, setting up CI pipelines, modernising existing C++ server-side infrastructure, and helping to build new Java microservices.',
-        'As Apprentice, completed a three-month program (now Codurance Academy) learning essential skills in software design, Extreme Programming practices, Clean Code, and Domain-Driven Design.'
+        'Worked in a team of consultants at a fintech, setting up CI pipelines, modernising existing C++ server-side infrastructure, and helping to build new Java microservices to replace PostgreSQL stored procedures.',
+        'As Apprentice, completed a three-month paid Academy program learning essential skills in software design, Extreme Programming practices, Clean Code, and Domain-Driven Design.'
       ]
     },
     {
@@ -61,7 +62,7 @@ export const about = {
       technologies: ['C', 'C++', '*nix'],
       bio: [
         'Worked on hardware interfaces on a film post-processing system, full-stack from usability testing and UI implementation, down to optimising the display drivers.',
-        'Wrote an xUnit-style unit test framework for the in-house scripting language ICI (similar to Perl or early JavaScript - see http://atrn.org/ici/).',
+        'Wrote an xUnit-style unit test framework for the in-house scripting language used for higher-level tasks within the application.',
         'As an intern, built automated testing harnesses, helped maintain the FilmLight intranet, and built PCs for developer use.'
       ]
     }
