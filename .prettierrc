@@ -12,6 +12,12 @@
         "svelteSortOrder": "options-scripts-styles-markup",
         "plugins": ["prettier-plugin-svelte"]
       }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 55
+      }
     }
   ],
   "pluginSearchDirs": ["."]

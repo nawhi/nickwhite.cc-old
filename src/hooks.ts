@@ -17,7 +17,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   event.locals.posts = posts
     .map((post) => ({
       ...post,
-      title: `${post.draft ? "[DRAFT]" : ""} ${post.title}`,
+      title: `${post.draft ? '[DRAFT]' : ''} ${post.title}`,
       href: `/blog/${post.filename.replace(/.md$/, '')}`
     }))
     .filter((post) => dev || !post.draft)

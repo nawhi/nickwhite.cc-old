@@ -5,13 +5,14 @@ description: A neat way to improve developer experience with the power of TypeSc
 ---
 
 ## Introduction
-In tech, user experience is king. Apps need to work, sure, but to be really valuable, they must also be easy and pleasant to use.  
+
+In tech, user experience is king. Apps need to work, sure, but to be really valuable, they must also be easy and pleasant to use.
 
 Something people often forget is that the first, the last, and the most frequent users of software systems are the engineers that built it.
 
 Can we borrow from the principles of customer-facing user interface design to make working with our Developer Interface - that is, the codebase - a more efficient and fulfilling experience?
 
-## Errors in JavaScript and TypeScript 
+## Errors in JavaScript and TypeScript
 
 One of the [principles of user interface design](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-831-user-interface-design-and-implementation-spring-2011/index.htm) is reducing the likelihood of error.
 
@@ -20,7 +21,7 @@ As an engineer, little errors, even relatively inconsequential ones, can pile up
 Here's a simple example:
 
 ```javascript
-const user = { firstname: "Nick", lastname: "White"};
+const user = { firstname: 'Nick', lastname: 'White' };
 
 console.log(user.firstName);
 ```
@@ -30,8 +31,8 @@ If I run this in JavaScript, my typo (`firstName` instead of `firstname`) will b
 With TypeScript, though, the mistake is surfaced at compile time:
 
 ```text
-test.ts:3:18 - error TS2551: Property 'firstName' does not exist on 
-                             type '{ firstname: string; lastName: string; }'. 
+test.ts:3:18 - error TS2551: Property 'firstName' does not exist on
+                             type '{ firstname: string; lastName: string; }'.
                              Did you mean 'firstname'?
 
 3 console.log(user.firstName);
@@ -47,7 +48,7 @@ If you are using an integrated development environment (IDE), it'll probably get
 
 ![IDE highlighting of a TypeScript compilation error](/img/highlighted-compilation-error.png)
 
-So TypeScript can statically catch a whole class of errors, where in JavaScript you'd have had to run the code to find them. 
+So TypeScript can statically catch a whole class of errors, where in JavaScript you'd have had to run the code to find them.
 
 Already, that's a big bump in developer experience - but it's hugely more powerful than that, as the following more complex example shows.
 
@@ -58,7 +59,10 @@ Google Maps have a handy API which allows you to programmatically fetch all sort
 Let's use [Google's Node.js SDK](https://github.com/googlemaps/google-maps-services-js), wrapped in a helper class for clarity, to get the address from the place ID for Buckingham Palace, which is a large house in London where the Queen lives.
 
 ```typescript
-import { Client, Place } from '@googlemaps/google-maps-services-js';
+import {
+  Client,
+  Place
+} from '@googlemaps/google-maps-services-js';
 
 class GoogleMapsClient {
   private client: Client = new Client();
@@ -70,7 +74,11 @@ class GoogleMapsClient {
     fields: string[]
   ): Promise<Place> {
     const details = await this.client.placeDetails({
-      params: { key: this.apiKey, place_id: placeId, fields },
+      params: {
+        key: this.apiKey,
+        place_id: placeId,
+        fields
+      }
     });
     return details.data.result;
   }
@@ -83,10 +91,14 @@ For instance, this is how we'd use our client to get the address:
 
 ```typescript
 const buckinghamPalace = 'ChIJtV5bzSAFdkgRpwLZFPWrJgo';
-const client = new GoogleMapsClient(process.env.MAPS_API_KEY!);
+const client = new GoogleMapsClient(
+  process.env.MAPS_API_KEY!
+);
 
 client
-  .getPlaceDetails(buckinghamPalace, ['formatted_address'])
+  .getPlaceDetails(buckinghamPalace, [
+    'formatted_address'
+  ])
   .then((details) => console.log({ details }));
 ```
 
@@ -139,14 +151,18 @@ From a developer perspective, the API response was pretty clear, so we could fin
 
 ![IDE showing autocomplete with possible fields matching 'phone'](/img/phone-number-intention.png)
 
-But unless you're exceptionally careful, you'll probably still get tripped up by this now and then. 
+But unless you're exceptionally careful, you'll probably still get tripped up by this now and then.
 
 Besides, there's a second problem which is much harder to catch. For example, what happens with the following code?
 
 ```typescript
 client
-  .getPlaceDetails(buckinghamPalace, ['formatted_address'])
-  .then((details) => console.log(details.formatted_phone_number));
+  .getPlaceDetails(buckinghamPalace, [
+    'formatted_address'
+  ])
+  .then((details) =>
+    console.log(details.formatted_phone_number)
+  );
 ```
 
 It compiles, runs and succeeds, but prints out:
@@ -165,7 +181,7 @@ In sum, there are two big things we'd like to improve on our wrapper class.
 
 1. You can misspell an entry in the `fields` parameter and only find out at runtime.
 2. You can ask the result for a field that you didn't request, and only find out that it's not there at runtime.
- 
+
 Let's see a potential solution.
 
 ```typescript
@@ -224,7 +240,7 @@ But this causes more problems than it solves. TypeScript now complains if you gi
 So let's back that out and leave it how it was!
 
 ## Conclusion
-The experience of developers matters too when building a software system. 
 
-It's well worth the time to consider ways of designing your components so that anyone consuming the component - whether it's your colleagues now, you in the future, or someone else entirely - can have a better and more efficient experience. 
+The experience of developers matters too when building a software system.
 
+It's well worth the time to consider ways of designing your components so that anyone consuming the component - whether it's your colleagues now, you in the future, or someone else entirely - can have a better and more efficient experience.

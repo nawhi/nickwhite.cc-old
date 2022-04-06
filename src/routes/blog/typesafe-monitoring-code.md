@@ -5,6 +5,7 @@ description: Another example of using TypeScript to supercharge the developer ex
 ---
 
 ## Introduction
+
 After spending some time at the start of my career working on user interfaces, I got really interested in the impact of error on a user's ability to get the most out of a system.
 
 As a really simple example, if the user has to enter an ISO currency code, a plain text box would suffice:
@@ -21,14 +22,16 @@ Instead, you could provide a searchable list of currencies:
 
 This restricts the input to only acceptable values as early as physically possible - before the user has typed anything at all - but not so early that you get an error before you've even finished typing, which is also very annoying.
 
-So our change has made our system subtly more efficient (and empowering)  to use.
+So our change has made our system subtly more efficient (and empowering) to use.
 
 ## Applying UX principles to coding
+
 One of the best things about TypeScript is that it allows you to apply similar principles to writing code, and design out the possibility of developer errors analogous to the user input errors we saw above.
 
 The rest of this post will sketch out a more involved example of this process.
 
 ## The Price Aggregator example
+
 Imagine you're working on a system which is like one of those price aggregator websites that you might use when you're renewing your insurance. You put in some details, and the website will search a variety of different providers and come back to you with a list of options.
 
 The request it makes may fail for any number of different reasons, many of which are to do with the third parties the system relies on and not the fault of the system itself.
@@ -36,7 +39,7 @@ The request it makes may fail for any number of different reasons, many of which
 A pseudo-skeleton of the code might look like this:
 
 ```typescript
-const server = require("your-favourite-http-server")();
+const server = require('your-favourite-http-server')();
 server.post('/search', async (req, res) => {
   const { search } = req.body;
 
@@ -48,19 +51,24 @@ server.post('/search', async (req, res) => {
     return res.tooManyRequests();
   }
 
-  return runSearch(search)
-    .catch((e) => res.internalServerError(e.message));
+  return runSearch(search).catch((e) =>
+    res.internalServerError(e.message)
+  );
 });
 ```
 
 ## Monitoring our system
-In your system, the business people want to be able to monitor the causes of different types of failure in a business-friendly way so that you can get a quick visual understanding of the throughput of the system. With hundreds of providers and searches, being able to visualise how the system is doing in this way is crucial. 
+
+In your system, the business people want to be able to monitor the causes of different types of failure in a business-friendly way so that you can get a quick visual understanding of the throughput of the system. With hundreds of providers and searches, being able to visualise how the system is doing in this way is crucial.
 
 So you introduce a framework for sending events to an external system as they happen, via a `Monitor` interface with a `register()` method, which allows you to record that a particular type of event occurred, and add key-value pairs ("tags") with metadata about the event.
 
 ```typescript
 interface Monitor {
-  register(event: string, tags: { [k: string]: string }): void;
+  register(
+    event: string,
+    tags: { [k: string]: string }
+  ): void;
 }
 ```
 
@@ -75,7 +83,7 @@ server.post('/search/v2', async (req, res) => {
   if (!isPermitted(search)) {
     monitor.register('search-v2.request-received', {
       outcome: 'forbidden',
-      location: search.location,
+      location: search.location
     });
     return res.forbidden();
   }
@@ -83,7 +91,7 @@ server.post('/search/v2', async (req, res) => {
   if (isTooManyRequests(search)) {
     monitor.register('search-v2.request-received', {
       outcome: 'rate-limited',
-      location: search.location,
+      location: search.location
     });
     return res.tooManyRequests();
   }
@@ -92,13 +100,13 @@ server.post('/search/v2', async (req, res) => {
     const result = await runSearch(search);
     monitor.register('search-v2.request-received', {
       outcome: 'success',
-      location: search.location,
+      location: search.location
     });
     return result;
   } catch (e) {
     monitor.register('search-v2.request-received', {
       outcome: 'error',
-      location: search.location,
+      location: search.location
     });
     return res.internalServerError(e.message);
   }
@@ -118,7 +126,7 @@ For example, consider this nearly identical code:
 ```typescript
 monitor.register('search_v2.request_received', {
   outcome: 'successful',
-  searchLocation: search.location,
+  searchLocation: search.location
 });
 ```
 
@@ -137,11 +145,14 @@ A simple way to so this for the event name would be to use a string union type:
 ```typescript
 type Event =
   | 'search-v2.request-received'
-  | 'searchv2.some-other-system-event'
-  // ... and many more ...
+  | 'searchv2.some-other-system-event';
+// ... and many more ...
 
 interface Monitor {
-  register(event: Event, tags: { [k: string]: string }): void;
+  register(
+    event: Event,
+    tags: { [k: string]: string }
+  ): void;
 }
 ```
 
@@ -156,11 +167,15 @@ To get around this, we can declare an object type literal for the `tags` object,
 ```typescript
 type Event =
   | 'search-v2.request-received'
-  | 'searchv2.some-other-system-event'
-  // ... and many more ...
+  | 'searchv2.some-other-system-event';
+// ... and many more ...
 
 type Tags = {
-  outcome: 'success' | 'rate-limited' | 'forbidden' | 'error';
+  outcome:
+    | 'success'
+    | 'rate-limited'
+    | 'forbidden'
+    | 'error';
   location: string;
 };
 
@@ -171,7 +186,7 @@ interface Monitor {
 
 We've now got covered all the possible sources of typos at compile time!
 
-## Tripping over our types 
+## Tripping over our types
 
 This solution has one major drawback: it assumes that our key-value tags are always the same for any event. However, the monitor is actually used elsewhere in the system for different types of events with different tags.
 
@@ -181,30 +196,42 @@ Here's one on an analytics endpoint.
 monitor.register('campaign-v3.impression', {
   source: 'organic',
   campaignCode: 3,
-  experiment: 'visible',
+  experiment: 'visible'
 });
 ```
 
 Nobody quite knows what it means or does, but it's absolutely critical to the marketing department, so it needs to stay - and with our new typings, this code will no longer compile.
 
 ## Towards a generic solution
+
 Our type safety has become a type straitjacket. To solve this, we'll need to combine some powerful TypeScript features: [constrained generics](https://www.typescriptlang.org/docs/handbook/generics.html#generic-constraints), [`keyof` and lookup types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#keyof-and-lookup-types).
 
 ```typescript
 type Events = {
   'search-v2.request-received': {
-    outcome: 'success' | 'rate-limited' | 'forbidden' | 'error';
+    outcome:
+      | 'success'
+      | 'rate-limited'
+      | 'forbidden'
+      | 'error';
     location: string;
   };
   'campaign-v3.impression': {
-    source: 'organic' | 'search' | 'inquiry' | 'unknown';
+    source:
+      | 'organic'
+      | 'search'
+      | 'inquiry'
+      | 'unknown';
     campaignCode: number;
     experiment: 'visible' | 'hidden';
   };
 };
 
 interface Monitor {
-  register<E extends keyof Events>(event: E, tags: Events[E]): void;
+  register<E extends keyof Events>(
+    event: E,
+    tags: Events[E]
+  ): void;
 }
 ```
 
@@ -223,32 +250,46 @@ An alternative is to dispose with the fancy mapped types and create one method p
 ```typescript
 class Monitor {
   registerRequest(
-    outcome: 'success' | 'rate-limited' | 'forbidden' | 'error',
+    outcome:
+      | 'success'
+      | 'rate-limited'
+      | 'forbidden'
+      | 'error',
     location: string
   ): void {
-    this.register('search-v2.request-received', { outcome, location });
+    this.register('search-v2.request-received', {
+      outcome,
+      location
+    });
   }
 
   registerImpression(
-    source: 'organic' | 'search' | 'inquiry' | 'unknown',
+    source:
+      | 'organic'
+      | 'search'
+      | 'inquiry'
+      | 'unknown',
     campaignCode: number,
     experiment: 'visible' | 'hidden'
   ): void {
     this.register('search-v2.request-received', {
       source,
       campaignCode,
-      meta,
+      meta
     });
   }
 
-  private register(event: string, tags: { [k: string]: string }) {
+  private register(
+    event: string,
+    tags: { [k: string]: string }
+  ) {
     // don't need type safety here anymore
     // because it's a private method now
   }
 }
 ```
 
-Ultimately, it's a value judgment and  which one you go for will depend on the context of the system as well as your personal preference. I like the former because it's easier to see what's going on (the event name isn't hidden), it's a bit more declarative, and it's more idiomatic JavaScript, even if it does result in more verbose code at the call sites. 
+Ultimately, it's a value judgment and which one you go for will depend on the context of the system as well as your personal preference. I like the former because it's easier to see what's going on (the event name isn't hidden), it's a bit more declarative, and it's more idiomatic JavaScript, even if it does result in more verbose code at the call sites.
 
 But the one-method-per-event solution definitely has advantages too. For instance, it produces much easier-to-understand compilation errors, especially on the tags.
 

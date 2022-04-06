@@ -28,7 +28,12 @@ const getPriceFromDocument = () => '$50.00';
 document
   .getElementById('widget-12345')
   .contentWindow.postMessage(
-    { type: 'widget.data', payload: { price: getPriceFromDocument() } },
+    {
+      type: 'widget.data',
+      payload: {
+        price: getPriceFromDocument()
+      }
+    },
     '*'
   );
 
@@ -63,7 +68,9 @@ interface ParentToIframeMessage {
   payload: { price: string };
 }
 
-const listener = (msg: MessageEvent<ParentToIframeMessage>) => {
+const listener = (
+  msg: MessageEvent<ParentToIframeMessage>
+) => {
   if (msg.data.type === 'widget.data') {
     // inside this clause, msg.data.payload is correctly
     // typed as {price: string}!
@@ -95,14 +102,25 @@ const handleWindowMessage = (event) => {
     case 'widget.ready':
       sendToIframe(iframe, {
         type: 'widget.data',
-        payload: { price: getPriceFromPage() },
+        payload: {
+          price: getPriceFromPage()
+        }
       });
       break;
     case 'widget.dimensions-change':
       const { width, height } = event.data.payload;
-      if (width) iframe.style.setProperty('width', `${width}px`, 'important');
+      if (width)
+        iframe.style.setProperty(
+          'width',
+          `${width}px`,
+          'important'
+        );
       if (height)
-        iframe.style.setProperty('height', `${height}px`, 'important');
+        iframe.style.setProperty(
+          'height',
+          `${height}px`,
+          'important'
+        );
       break;
     case 'widget.close':
       removeWidget(iframe?.id);
@@ -119,7 +137,10 @@ type IframeToParentMessage =
   | { type: 'widget.ready' }
   | {
       type: 'widget.dimensions-change';
-      payload: { width?: number; height?: number };
+      payload: {
+        width?: number;
+        height?: number;
+      };
     };
 ```
 
@@ -135,8 +156,9 @@ const sendToIframe = (
 ) => iframe.contentWindow?.postMessage(message, '*');
 
 // in the iframe
-const sendToParent = (message: IframeToParentMessage) =>
-  window.parent.postMessage(message, '*');
+const sendToParent = (
+  message: IframeToParentMessage
+) => window.parent.postMessage(message, '*');
 ```
 
 ## Conclusion
@@ -155,7 +177,10 @@ type MessageToIframe =
   | { type: 'widget.ready' }
   | {
       type: 'widget.dimensions-change';
-      payload: { width?: number; height?: number };
+      payload: {
+        width?: number;
+        height?: number;
+      };
     };
 
 type MessageToParentWindow = {
@@ -198,7 +223,9 @@ const getMessageSender = (
     : null;
 };
 
-const windowMessageHandler = (event: MessageEvent<MessageToIframe>) => {
+const windowMessageHandler = (
+  event: MessageEvent<MessageToIframe>
+) => {
   const iframe = getMessageSender(event);
   if (iframe == null) return;
 
@@ -206,14 +233,25 @@ const windowMessageHandler = (event: MessageEvent<MessageToIframe>) => {
     case 'widget.ready':
       sendToIframe(iframe, {
         type: 'widget.data',
-        payload: { price: getPriceFromPage() },
+        payload: {
+          price: getPriceFromPage()
+        }
       });
       break;
     case 'widget.dimensions-change':
       const { width, height } = event.data.payload;
-      if (width) iframe?.style?.setProperty('width', `${width}px`, 'important');
+      if (width)
+        iframe?.style?.setProperty(
+          'width',
+          `${width}px`,
+          'important'
+        );
       if (height)
-        iframe?.style?.setProperty('height', `${height}px`, 'important');
+        iframe?.style?.setProperty(
+          'height',
+          `${height}px`,
+          'important'
+        );
       break;
     case 'widget.close':
       removeWidget(iframe?.id);
@@ -221,12 +259,16 @@ const windowMessageHandler = (event: MessageEvent<MessageToIframe>) => {
   }
 };
 
-const sleep = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
+const sleep = (n: number) =>
+  new Promise((resolve) => setTimeout(resolve, n));
 
 (async () => {
   const widgetId = 'widget1';
 
-  window.addEventListener('message', windowMessageHandler);
+  window.addEventListener(
+    'message',
+    windowMessageHandler
+  );
 
   // Display widget after 1 second
   await sleep(1000);
@@ -245,41 +287,59 @@ import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 
-const sendToParentWindow = (message: MessageToIframe) =>
-  window.parent.postMessage(message, '*');
+const sendToParentWindow = (
+  message: MessageToIframe
+) => window.parent.postMessage(message, '*');
 
 const App = () => {
   const [price, setPrice] = useState<string>();
   const container = useRef<HTMLDivElement>();
 
   useEffect(() => {
-    sendToParentWindow({ type: 'widget.ready' });
+    sendToParentWindow({
+      type: 'widget.ready'
+    });
 
-    const listener = (e: MessageEvent<MessageToParentWindow>) =>
-      e.data.type === 'widget.data' && setPrice(e.data.payload.price);
+    const listener = (
+      e: MessageEvent<MessageToParentWindow>
+    ) =>
+      e.data.type === 'widget.data' &&
+      setPrice(e.data.payload.price);
 
     window.addEventListener('message', listener);
-    return () => window.removeEventListener('message', listener);
+    return () =>
+      window.removeEventListener('message', listener);
   }, []);
 
   useEffect(() => {
     const observer = new ResizeObserver(([entry]) => {
-      const { height, width } = entry?.contentRect || {};
+      const { height, width } =
+        entry?.contentRect || {};
       sendToParentWindow({
         type: 'widget.dimensions-change',
-        payload: { width, height },
+        payload: { width, height }
       });
     });
-    container.current && observer.observe(container.current);
+    container.current &&
+      observer.observe(container.current);
 
-    return () => container.current && observer.unobserve(container.current);
+    return () =>
+      container.current &&
+      observer.unobserve(container.current);
   }, []);
 
-  if (!price) return <div>Loading the best price...</div>;
+  if (!price)
+    return <div>Loading the best price...</div>;
 
   return (
     <div ref={container}>
-      <button onClick={() => sendToParentWindow({ type: 'widget.close' })}>
+      <button
+        onClick={() =>
+          sendToParentWindow({
+            type: 'widget.close'
+          })
+        }
+      >
         Close
       </button>
       <h1>You found a best price of {price}!</h1>
@@ -287,5 +347,8 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 ```

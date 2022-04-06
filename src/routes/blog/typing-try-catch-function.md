@@ -20,7 +20,9 @@ If you get an error code, you'll need to send it to support, but if not, there's
 The code might look something like this:
 
 ```typescript
-const { status, body } = await yourFavouriteHttpClient('/dodgy-api');
+const { status, body } = await yourFavouriteHttpClient(
+  '/dodgy-api'
+);
 if (status !== 200) {
   let errorCode: string;
   try {
@@ -36,7 +38,9 @@ If you're doing this sort of thing a lot, it can make the code quite difficult t
 result if it throws an error:
 
 ```typescript
-function safe(action: () => string): string | undefined {
+function safe(
+  action: () => string
+): string | undefined {
   try {
     return action();
   } catch (_) {}
@@ -48,7 +52,9 @@ Now it looks much cleaner:
 ```typescript
 const result = yourFavouriteHttpClient('/dodgy-api');
 if (result.status !== 200) {
-  const errorCode = safe(() => JSON.parse(result.bodyString).code);
+  const errorCode = safe(
+    () => JSON.parse(result.bodyString).code
+  );
   if (errorCode) {
     await sendToSupport(errorCode);
   }
@@ -78,7 +84,9 @@ If we used `safe()`, we could turn this into a single expression:
 ```typescript
 function formatCurrency(rawValue: string): string {
   const money = safe(() => parseMoney(rawValue));
-  return money ? money.toShortString() : INVALID_CURRENCY_WARNING;
+  return money
+    ? money.toShortString()
+    : INVALID_CURRENCY_WARNING;
 }
 ```
 
@@ -99,7 +107,9 @@ Now we can pass any function that takes no arguments and returns some object, an
 ```typescript
 // safe<T>() inferred to safe<Date>()
 // foo inferred to Date | undefined
-const foo = safe(() => new Date('12 Jun').toISOString());
+const foo = safe(() =>
+  new Date('12 Jun').toISOString()
+);
 
 // safe<T>() inferred to safe<Money>()
 // bar inferred to Money | undefined
@@ -126,7 +136,10 @@ function formatCurrency(rawValue: string): string {
 How could we type the second argument? Here's a quick fix that makes the compiler happy:
 
 ```typescript
-function safe<T>(action: () => T, defaultResult: any): T | undefined {
+function safe<T>(
+  action: () => T,
+  defaultResult: any
+): T | undefined {
   try {
     return action();
   } catch (_) {
@@ -136,13 +149,13 @@ function safe<T>(action: () => T, defaultResult: any): T | undefined {
 ```
 
 ## Type confusion
+
 This typing gets us into trouble. If you passed a `defaultResult` that wasn't of type `T`, it would compile, but resolve to the wrong types at runtime. For example:
 
 ```typescript
-const broken = safe(() => "hello", 10);
-// broken is of type "string | undefined" 
+const broken = safe(() => 'hello', 10);
+// broken is of type "string | undefined"
 // but its value is actually 10!
-
 ```
 
 What can we do to fix this?
@@ -153,7 +166,7 @@ Our function can now take on any of three different type signatures:
 2. an `action` and a `defaultResult` which return the same type (e.g. `formatCurrency` above)
 3. an `action` which returns one type, and a `defaultResult` which returns another (e.g. `get(() => 5, null))`)
 
-When trying to solve a problem like this, it's often helpful to create individual signatures that match each of the use cases. Then, rather like test-driving an algorithm, a solution which composes them together often appears almost by itself. 
+When trying to solve a problem like this, it's often helpful to create individual signatures that match each of the use cases. Then, rather like test-driving an algorithm, a solution which composes them together often appears almost by itself.
 
 So here goes:
 
@@ -164,12 +177,18 @@ function safe<T>(action: () => T): T | undefined {
 }
 
 // Requirement 2: action returns a type, defaultResult is same type
-function safe<T>(action: () => T, defaultResult: T): T {
+function safe<T>(
+  action: () => T,
+  defaultResult: T
+): T {
   // etc
 }
 
 // Requirement 3: action returns a type, defaultResult is a different type
-function safe<T, U>(action: () => T, defaultResult: U): T | U {
+function safe<T, U>(
+  action: () => T,
+  defaultResult: U
+): T | U {
   // etc
 }
 ```
@@ -180,8 +199,14 @@ Then we can compose the two remaining signatures into a single declaration using
 
 ```typescript
 function safe<T>(action: () => T): T | undefined;
-function safe<T, U>(action: () => T, defaultResult: U): T | U;
-function safe<T, U>(action: () => T, defaultResult?: U): T | U | undefined {
+function safe<T, U>(
+  action: () => T,
+  defaultResult: U
+): T | U;
+function safe<T, U>(
+  action: () => T,
+  defaultResult?: U
+): T | U | undefined {
   try {
     return action();
   } catch (_) {
@@ -197,7 +222,10 @@ One of my guiding rules in writing code is not to introduce complexity unless it
 In this case, we could make the signature much simpler by making the optional default parameter mandatory. This would also make more explicit some behaviour that is currently a bit difficult to see at first glance: that the function returns `undefined` on error if you don't give it a second parameter.
 
 ```typescript
-function safe<T, U>(action: () => T, defaultResult: U): T | U {
+function safe<T, U>(
+  action: () => T,
+  defaultResult: U
+): T | U {
   try {
     return action();
   } catch (_) {
@@ -212,4 +240,5 @@ const foo = safe(() => JSON.parse(thing), undefined);
 If the function is in a single repo, and you have control over all call sites, this would be a small refactor and definitely worth doing. On the other hand, the change does not preserve backward compatibility, so if you don't know where all your callers are, it wouldn't be as easy.
 
 ### Conclusion
-A function that abstracts the `try`-`catch` pattern is a nice way of introducing some functional concepts into a procedural codebase without a major rewrite. 
+
+A function that abstracts the `try`-`catch` pattern is a nice way of introducing some functional concepts into a procedural codebase without a major rewrite.

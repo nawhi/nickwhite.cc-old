@@ -1,4 +1,4 @@
-export type Page = { route: string, name: string, exact?: boolean };
+export type Page = { route: string; name: string; exact?: boolean };
 
 export const pages: Page[] = [
   { route: '/', name: 'Home' },
@@ -8,4 +8,4 @@ export const pages: Page[] = [
 
 export const matchPage = (page: Page, pathname: string) => {
   return page.route === pathname;
-}
+};
