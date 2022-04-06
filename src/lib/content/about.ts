@@ -61,9 +61,9 @@ export const about = {
       link: 'https://filmlight.ltd.uk',
       technologies: ['C', 'C++', '*nix'],
       bio: [
-        'Worked on hardware interfaces on a film post-processing system, full-stack from usability testing and UI implementation, down to optimising the display drivers.',
-        'Wrote an xUnit-style unit test framework for the in-house scripting language used for higher-level tasks within the application.',
-        'As an intern, built automated testing harnesses, helped maintain the FilmLight intranet, and built PCs for developer use.'
+        "Worked on button-mapping software for hardware interfaces on a film post-processing system. Worked across the full stack from usability testing and UI implementation down to optimising the display drivers. Also wrote an xUnit-style unit test framework for the in-house scripting language to aid in testing my code.",
+        'As an intern, built automated testing harnesses, helped maintain the FilmLight intranet, and built developer workstations.',
+        'Education note: During my time at FilmLight, I studied undergraduate mathematics and computer science courses on MIT OpenCourseWare in my spare time. This enabled me to transition from a music degree into the field of software engineering.'
       ]
     }
   ],
