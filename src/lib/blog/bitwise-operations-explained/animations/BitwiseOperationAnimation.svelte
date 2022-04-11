@@ -1,7 +1,9 @@
 <script lang="ts">
-  export let number1: number,
-    number2: number,
-    bin1: string,
+  import NumberGrid from '../common/NumberGrid.svelte';
+
+  export let number1: number, number2: number;
+
+  let bin1: string,
     bin2: string,
     digits: number,
     bin1Padded: string,
@@ -25,10 +27,7 @@
 </script>
 
 <div class="text-4xl font-mono flex flex-col overflow-x-auto gap-8">
-  <div
-    class="w-full grid gap-6 grid-rows-3 justify-items-center"
-    style="grid-template-columns: repeat({digits}, 1fr);"
-  >
+  <NumberGrid rows={3} cols={digits}>
     {#each bin1Padded as char}
       <div>{char}</div>
     {/each}
@@ -42,7 +41,7 @@
         <div class="font-bold text-green-600">1</div>
       {/if}
     {/each}
-  </div>
+  </NumberGrid>
   <div class="pt-12">
     0b{resultBin} = <strong>{resultBase10}</strong>
   </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import BinaryToDecimalAnimation from './BinaryToDecimalAnimation.svelte';
+  import BinaryToDecimalAnimation from "./animations/BinaryToDecimalAnimation.svelte";
 
   let binary: string;
   let ready = false;

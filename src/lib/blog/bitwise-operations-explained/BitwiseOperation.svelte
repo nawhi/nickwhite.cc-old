@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Animation from './BitwiseOperationAnimation.svelte';
+  import Animation from './animations/BitwiseOperationAnimation.svelte';
 
   let number1: number, number2: number;
   let ready = false;

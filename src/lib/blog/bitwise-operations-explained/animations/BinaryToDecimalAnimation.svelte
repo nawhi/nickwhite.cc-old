@@ -1,4 +1,6 @@
 <script lang="ts">
+  import NumberGrid from '../common/NumberGrid.svelte';
+
   export let binary: string,
     powersOfTwoReversed: number[],
     decimalDigitsReversed: number[],
@@ -16,10 +18,7 @@
   }
 </script>
 
-<div
-  class="grid gap-6 grid-rows-3 justify-items-center font-mono text-3xl"
-  style="grid-template-columns: repeat({binary.length}, 1fr)"
->
+<NumberGrid rows={3} cols={binary.length}>
   {#each binary as digit, i}
     <div class="h-full {digit === '0' ? 'text-gray-400' : 'font-bold'}">{digit}</div>
   {/each}
@@ -33,7 +32,7 @@
       {Math.pow(2, powerOfTwo)}
     </div>
   {/each}
-</div>
+</NumberGrid>
 <div class="font-mono pt-5">
   0b{binary} = {decimalDigitsReversed.join(' + ')} =
   <strong>{result}</strong>
