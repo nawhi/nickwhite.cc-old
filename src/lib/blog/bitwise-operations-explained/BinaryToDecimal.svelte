@@ -5,7 +5,7 @@
   let ready = false;
 
   // language=RegExp
-  const binaryPattern = "[01]+"
+  const binaryPattern = '[01]+';
 </script>
 
 <style>
@@ -37,12 +37,12 @@
     name="number1"
     placeholder="Enter a binary number"
     inputmode="numeric"
-    pattern="{binaryPattern}"
+    pattern={binaryPattern}
   />
   <button type="submit" class="mx-5">Go</button>
 </form>
-<div class="h-20">
-  {#if ready}
+{#if ready}
+  <div class="py-4">
     <BinaryToDecimalAnimation {binary} />
-  {/if}
-</div>
+  </div>
+{/if}

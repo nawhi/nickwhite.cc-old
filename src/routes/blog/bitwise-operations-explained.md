@@ -8,6 +8,8 @@ draft: true
 <script>
   import BitwiseOperation from '$lib/blog/bitwise-operations-explained/BitwiseOperation.svelte';
   import BinaryToDecimal from '$lib/blog/bitwise-operations-explained/BinaryToDecimal.svelte';
+import DecimalToBinary from '$lib/blog/bitwise-operations-explained/DecimalToBinary.svelte';
+
 </script>
 
 **TLDR:** Play with the [animations](#animation) further down.
@@ -46,19 +48,9 @@ To disambiguate between decimal and binary, you might see the binary number pref
 If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two:
 
 
-```
-ANIMATION HERE
-28 = 16 + 8 + 4 = 0b11100
-
-Step 1: (28 / 1) % 2 = 0
-Step 2: (28 / 2) % 2 = 0
-Step 3: (28 / 4) % 2 = 1
-Step 4: (28 / 8) % 2 = 1
-Step 5: (28 / 16) % 2 = 1
-Step 6: (28 / 32) < 0, so STOP
-
-Result: 11100
-```
+<div class="blog-widget">
+  <DecimalToBinary/>
+</div>
 
 ## Converting binary to decimal
 
@@ -66,7 +58,7 @@ Going the other way is a lot easier. Just sum up the powers of two that have a `
 
 It's often easier to count from the right when doing this.
 
-<div style="height: 200px">
+<div class="blog-widget">
   <BinaryToDecimal/>
 </div>
 
@@ -80,8 +72,9 @@ Since each digit takes only two values, we can use Boolean operators (AND, OR, N
 
 This yields surprising but interesting results. To see it in action, have a go below.
 
-
-<BitwiseOperation/>
+<div class="blog-widget">
+  <BitwiseOperation/>
+</div>
 
 ## Why would you do this?
 

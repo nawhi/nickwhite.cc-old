@@ -17,7 +17,7 @@
 </script>
 
 <div
-  class="w-full h-full grid gap-6 grid-rows-3 justify-items-center font-mono text-3xl pb-5"
+  class="grid gap-6 grid-rows-3 justify-items-center font-mono text-3xl"
   style="grid-template-columns: repeat({binary.length}, 1fr)"
 >
   {#each binary as digit, i}

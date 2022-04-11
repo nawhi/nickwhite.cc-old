@@ -21,7 +21,7 @@
   }
 </style>
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col">
   <div class="p-1 flex-row">
     <form
       on:submit|preventDefault={(e) => {
@@ -55,6 +55,7 @@
   </div>
 </div>
 {#if ready}
-  <div class="py-5" />
-  <Animation {number1} {number2} />
+  <div class="py-4">
+    <Animation {number1} {number2} />
+  </div>
 {/if}

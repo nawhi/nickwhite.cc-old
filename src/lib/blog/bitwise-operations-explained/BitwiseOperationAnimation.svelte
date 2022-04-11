@@ -25,12 +25,6 @@
 </script>
 
 <div class="text-4xl font-mono flex flex-col overflow-x-auto gap-8">
-  <div>
-    {number1} = 0b{bin1}
-  </div>
-  <div>
-    {number2} = 0b{bin2}
-  </div>
   <div
     class="w-full grid gap-6 grid-rows-3 justify-items-center"
     style="grid-template-columns: repeat({digits}, 1fr);"
