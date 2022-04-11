@@ -1,6 +1,6 @@
 <script lang="ts">
-  import BinaryToDecimalAnimation from "./animations/BinaryToDecimalAnimation.svelte";
-  import Form from "./common/Form.svelte";
+  import BinaryToDecimalAnimation from './animations/BinaryToDecimalAnimation.svelte';
+  import Form from './common/InlineForm.svelte';
 
   let binary: string;
   let ready = false;
@@ -12,10 +12,8 @@
 <Form
   class="p-1 flex flex-row"
   on:submit={(e) => {
-    console.log(e)
-    const formData = e.detail;
     ready = true;
-    binary = formData.get('number1');
+    binary = e.detail.get('number1');
   }}
 >
   <input
