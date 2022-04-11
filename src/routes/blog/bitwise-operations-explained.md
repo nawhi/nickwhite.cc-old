@@ -47,7 +47,6 @@ To disambiguate between decimal and binary, you might see the binary number pref
 
 If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two:
 
-
 <div class="blog-widget">
   <DecimalToBinary/>
 </div>
