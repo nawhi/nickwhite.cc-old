@@ -26,17 +26,16 @@
   };
 </script>
 
-<div class="flex flex-col gap-4">
-  {#each generateSteps(number) as { val, stop }}
-    <div class="inline-flex">
-      <span class="font-mono">({number} / {val}) % 2&nbsp;</span>
+<div class="flex flex-col gap-4 py-4">
+  {#each generateSteps(number) as { val, stop }, i}
+    <div class="inline-flex gap-3">
+      <span>
+        ⌊{number} ÷ 2<sup>{i}</sup>⌋ mod 2&nbsp;= {Math.floor(number / val) % 2}
+      </span>
       {#if stop}
-        <pre>&lt; 0</pre>
-        ,&nbsp;<strong>STOP</strong>
-      {:else}
-        <pre>= {(number / val) % 2}</pre>
+        <span>(<strong>STOP:</strong> result &lt; 1)</span>
       {/if}
     </div>
   {/each}
-  Result = <pre>0b{number.toString(2)}</pre>
+  <div class="inline-flex gap-2">Result: <span class="font-mono">0b{number.toString(2)}</span></div>
 </div>
