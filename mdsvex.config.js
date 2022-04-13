@@ -4,7 +4,7 @@ import remarkExternalLinks from 'remark-external-links';
 const config = defineConfig({
   extensions: ['.svelte.md', '.md', '.svx'],
 
-  layout: './src/lib/components/blog/blog-content-layout.svelte',
+  layout: './src/lib/blog/layout.svelte',
 
   smartypants: {
     dashes: 'oldschool'

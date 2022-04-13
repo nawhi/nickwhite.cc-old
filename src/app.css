@@ -24,6 +24,7 @@ pre[class*='language-'] {
   }
 
   .blog-content p,
+  .blog-content .blog-widget,
   .gatsby-highlight {
     @apply mb-6;
     @apply font-sans;
