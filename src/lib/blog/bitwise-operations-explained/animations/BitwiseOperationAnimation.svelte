@@ -42,7 +42,7 @@
       {/if}
     {/each}
   </NumberGrid>
-  <div class="pt-12">
+  <div class="pt-0 text-xl">
     0b{resultBin} = <strong>{resultBase10}</strong>
   </div>
 </div>

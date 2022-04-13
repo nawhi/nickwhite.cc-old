@@ -20,7 +20,7 @@
       {#if stop}
         (<strong>STOP:</strong> result &lt; 1)
       {:else}
-        {Math.floor(number / val)} mod 2&nbsp;=&nbsp;{Math.floor(number / val) % 2}
+        {Math.floor(number / val)} &percnt; 2&nbsp;=&nbsp;{Math.floor(number / val) % 2}
       {/if}
     </div>
     <div class="font-bold text-xl font-mono">
