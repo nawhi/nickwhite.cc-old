@@ -44,7 +44,6 @@ To disambiguate between decimal and binary, you might see the binary number pref
 
 ## Converting decimal to binary
 
-
 If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two:
 
 <div class="blog-widget">
@@ -93,11 +92,11 @@ function logic(options) {
 }
 
 // call it like so
-logic({ 
+logic({
   isAdmin: false,
   hasLoggedInBefore: true,
-  eligibleForUpgrade: true,
-  /* etc... */ 
+  eligibleForUpgrade: true
+  /* etc... */
 });
 ```
 
@@ -107,15 +106,15 @@ Well, you could just pass each boolean as a separate function argument. But that
 
 ```javascript
 // 😱 which is which???
-logic(false, true, true, false, true, false); 
+logic(false, true, true, false, true, false);
 ```
 
 With our new binary knowledge, you can achieve all the readability of an object with the storage overhead of just a single bit for each option.
 
 ```javascript
-const IS_ADMIN = 0;
-const HAS_LOGGED_IN_BEFORE = 0 << 1; // 0b10 = 1
-const ELIGIBLE_FOR_UPGRADE = 0 << 2; // 0b100 = 2
+const IS_ADMIN = 0b1;
+const HAS_LOGGED_IN_BEFORE = 0b10;
+const ELIGIBLE_FOR_UPGRADE = 0b100;
 
 function logic(options) {
   if (options & IS_ADMIN) {
@@ -126,6 +125,17 @@ function logic(options) {
   }
 }
 
-// call it like so, for these two options to be true, and the rest false
+// call it like so, for these two
+// options to be true, and the rest false
 logic(IS_ADMIN | ELIGIBLE_FOR_UPGRADE);
+```
+
+(Side note: using binary literals has a developer experience problem - if you create a flag by copy-pasting a line, it will overwrite the flag that was already there unless you remember to add another zero. To prevent this proble, flags can instead be declared with a [left-shifted](https://www.ibm.com/docs/en/i/7.1?topic=expressions-bitwise-left-right-shift-operators) incrementing integer.)
+
+```javascript
+let i = 0;
+
+const FLAG1 = 1 << i++; // 0b10
+const FLAG2 = 1 << i++; // 0b100
+const FLAG3 = 1 << i++; // 0b1000
 ```
