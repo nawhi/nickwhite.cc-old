@@ -5,7 +5,7 @@
 </script>
 
 <style>
-  :global(.form-input > input) {
+  :global(.form-with-styled-inputs > input) {
     @apply w-auto py-2 px-3 text-gray-700 leading-tight;
     @apply shadow appearance-none focus:outline-none border rounded;
   }
@@ -17,11 +17,11 @@
 </style>
 
 <form
-  class="p-1 flex flex-row"
+  class="form-with-styled-inputs p-1 flex flex-col items-start gap-2"
   on:submit|preventDefault={(e) => {
     dispatch('submit', new FormData(e.target));
   }}
 >
-  <div class="form-input"><slot /></div>
-  <button type="submit" class="mx-5">Go</button>
+  <slot />
+  <button type="submit" class="mt-2">Go</button>
 </form>

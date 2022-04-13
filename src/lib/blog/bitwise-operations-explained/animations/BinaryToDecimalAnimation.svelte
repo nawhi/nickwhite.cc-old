@@ -34,6 +34,5 @@
   {/each}
 </NumberGrid>
 <div class="font-mono pt-5">
-  0b{binary} = {decimalDigitsReversed.join(' + ')} =
-  <strong>{result}</strong>
+  {decimalDigitsReversed.join(' + ')} =&nbsp;<strong>{result}</strong>
 </div>

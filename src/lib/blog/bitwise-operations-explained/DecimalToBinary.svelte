@@ -23,5 +23,9 @@
   />
 </InlineForm>
 {#if ready}
-  <DecimalToBinaryAnimation {number} />
+  {#if number > 2048}
+    <div class="text-red-400 font-semibold">Please enter a number between 0 and 2048</div>
+  {:else}
+    <DecimalToBinaryAnimation {number} />
+  {/if}
 {/if}

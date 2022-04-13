@@ -22,7 +22,7 @@
     min="0"
     step="1"
   />
-  <code class="px-5">&amp;</code>
+  <div class="font-mono px-5">&amp;</div>
   <input
     type="number"
     id="num2"

@@ -21,11 +21,20 @@
     name="number1"
     placeholder="Enter a binary number"
     inputmode="numeric"
-    pattern={binaryPattern}
   />
 </Form>
 {#if ready}
   <div class="py-4">
-    <BinaryToDecimalAnimation {binary} />
+    {#if /[^01]/.test(binary)}
+      <div class="text-red-400 font-semibold">
+        Please enter a binary number, consisting only of digits 0 and 1
+      </div>
+    {:else if binary.length > 12}
+      <div class="text-red-400 font-semibold">
+        Please enter no more than twelve digits
+      </div>
+    {:else}
+      <BinaryToDecimalAnimation {binary} />
+    {/if}
   </div>
 {/if}
