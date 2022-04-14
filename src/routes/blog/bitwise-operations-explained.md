@@ -1,24 +1,21 @@
 ---
-title: Bitwise operations explained
+title: An introduction to bitwise operations
 date: 2022-03-19
-description: Some animations that help to understand bitwise operations.
+description: Bit manipulation for the binary novice.
 draft: true
 ---
 
 <script>
   import BitwiseOperation from '$lib/blog/bitwise-operations-explained/BitwiseOperation.svelte';
   import BinaryToDecimal from '$lib/blog/bitwise-operations-explained/BinaryToDecimal.svelte';
-import DecimalToBinary from '$lib/blog/bitwise-operations-explained/DecimalToBinary.svelte';
-
+  import DecimalToBinary from '$lib/blog/bitwise-operations-explained/DecimalToBinary.svelte';
 </script>
-
-**TLDR:** Play with the [animations](#animation) further down.
 
 ## Introduction
 
-Generally, if you do all your programming in high-level languages like Python or JavaScript (or even Java), you'll rarely need to go that far into the way the underlying tech works. The programming language is usually a good enough abstraction.
+Generally, if you do all your programming in high-level languages like Python or JavaScript (or even Java), you'll rarely need to go that far into the underlying machinery. The programming language is usually a good enough abstraction.
 
-That said, it is occasionally useful to understand what binary is, and how to use it. For example (in fact the motivation for this post), bitwise operations can reduce this [Allergies kata](https://www.codewars.com/kata/58be35e9e36224a33f000023/python) from a maths-laden mega-algorithm to a couple of lines.
+That said, it is occasionally useful to understand what binary is, and how to use it. For example (in fact the motivation for this post), bitwise arithmetic can reduce this [Allergies kata](https://www.codewars.com/kata/58be35e9e36224a33f000023/python) from a maths-laden mega-algorithm to a couple of lines.
 
 ## Binary numbers
 
@@ -33,7 +30,7 @@ Notice that each number with a single leading 1 and trailing zeroes represents a
 `&nbsp;10000`&nbsp; = 2<sup>5</sup> = 32<br/>
 `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp; and so on.
 
-This applies to the first two numbers as well, because like all good computer science things, we start not with one but with zero.
+This applies to `1` as well, because as usual in computer science, we start not with one but with zero.
 
 `&nbsp;1` = 2<sup>0</sup> = 1<br/>
 `10` = 2<sup>1</sup> = 2
@@ -44,7 +41,9 @@ To disambiguate between decimal and binary, you might see the binary number pref
 
 ## Converting decimal to binary
 
-If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two:
+If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two, rounding the result _down_ to the nearest integer, and taking the remainder when dividing by two. This is the digit in the position of the power of two you divided by.
+
+This is much easier to see in practice:
 
 <div class="blog-widget">
   <DecimalToBinary/>
@@ -73,6 +72,8 @@ This yields surprising but interesting results. To see it in action, have a go b
 <div class="blog-widget">
   <BitwiseOperation/>
 </div>
+
+All high-level programming languages have bitwise operations, and they are often builtins. In JavaScript, bitwise AND and OR are the similar to boolean AND and OR, and there are also XOT and NOT operators - see [here](https://www.w3schools.com/js/js_bitwise.asp) for a full list.
 
 ## Why would you do this?
 
