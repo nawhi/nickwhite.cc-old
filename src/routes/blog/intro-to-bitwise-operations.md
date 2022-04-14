@@ -73,7 +73,7 @@ This yields surprising but interesting results. To see it in action for bitwise 
   <BitwiseOperation/>
 </div>
 
-All high-level programming languages have bitwise operations, and they are often builtins. In JavaScript, bitwise AND and OR are the similar to boolean AND and OR, and there are also XOT and NOT operators - see [here](https://www.w3schools.com/js/js_bitwise.asp) for a full list.
+All high-level programming languages have bitwise operations, and they are often builtins. In JavaScript, bitwise AND and OR are the similar to boolean AND and OR, and there are also XOR and NOT operators - see [here](https://www.w3schools.com/js/js_bitwise.asp) for a full list.
 
 ## Why would you do this?
 
