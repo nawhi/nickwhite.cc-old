@@ -1,8 +1,7 @@
 ---
 title: An introduction to bitwise operations
-date: 2022-03-19
-description: Bit manipulation for the binary novice.
-draft: true
+date: 2022-04-14
+description: An interactive guide to bit manipulation for the binary novice.
 ---
 
 <script>
@@ -10,6 +9,8 @@ draft: true
   import BinaryToDecimal from '$lib/blog/bitwise-operations-explained/BinaryToDecimal.svelte';
   import DecimalToBinary from '$lib/blog/bitwise-operations-explained/DecimalToBinary.svelte';
 </script>
+
+**TLDR?** Skip to the [interactive bit](#interactive-bit).
 
 ## Introduction
 
@@ -35,39 +36,38 @@ This applies to `1` as well, because as usual in computer science, we start not 
 `&nbsp;1` = 2<sup>0</sup> = 1<br/>
 `10` = 2<sup>1</sup> = 2
 
-To disambiguate between decimal and binary, you might see the binary number prefixed with a zero and a lower-case `b`. So `0b10110` means twenty-two in binary, not ten thousand one hundred and ten in decimal.
+To disambiguate between decimal and binary, you might see the binary number prefixed with a zero and a lower-case `b`. So `0b10110` means 22 in binary, not 10,110 in decimal.
 
-<a id="animation"></a>
 
-## Converting decimal to binary
+## <a id="interactive-bit" style="text-decoration: none">The Interactive Bit</a>
+
+### Converting decimal to binary
 
 If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two, rounding the result _down_ to the nearest integer, and taking the remainder when dividing by two. This is the digit in the position of the power of two you divided by.
 
-This is much easier to see in practice:
+This is much easier to see in practice.
 
 <div class="blog-widget">
   <DecimalToBinary/>
 </div>
 
-## Converting binary to decimal
+### Converting binary to decimal
 
-Going the other way is a lot easier. Just sum up the powers of two that have a `1` there, and ignore the ones that have a `0`.
-
-It's often easier to count from the right when doing this.
+Going the other way is a lot easier: sum up the powers of two that have a `1` there, and ignore the ones that have a `0`. Counting from the right makes it more straightforward, as you can start with the lowest powers of two.
 
 <div class="blog-widget">
   <BinaryToDecimal/>
 </div>
 
-For me it was quite interesting seeing how any number could be decomposed into powers of two - a bit like a really simple Fourier transform.
+I had a moment of "the universe is mad, bro" over the idea that any number decomposes into the sum of powers of two, like some sort of programmer's Fourier transform.
 
-## Bitwise operations
+### Bitwise operations
 
 All numbers are stored as an array of bits, each taking the value 1 or 0 and representing a digit of the number in binary form.
 
 Since each digit takes only two values, we can use Boolean operators (AND, OR, NOT, XOR, etc) on each pair of their digits to create a totally new binary number.
 
-This yields surprising but interesting results. To see it in action, have a go below.
+This yields surprising but interesting results. To see it in action for bitwise AND, have a go below.
 
 <div class="blog-widget">
   <BitwiseOperation/>

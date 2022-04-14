@@ -27,12 +27,23 @@
 </script>
 
 <div class="text-4xl font-mono flex flex-col overflow-x-auto gap-8">
-  <NumberGrid rows={3} cols={digits}>
-    {#each bin1Padded as char}
-      <div>{char}</div>
+  <NumberGrid rows={4} cols={digits}>
+    {#each bin1Padded as _, i}
+      <div class="text-sm pt-2.5">2<sup>{bin1Padded.length - (i + 1)}</sup></div>
     {/each}
-    {#each bin2Padded as char}
-      <div>{char}</div>
+    {#each bin1Padded as char, i}
+      <div
+        class={char === '1' && bin2Padded[i] === '1' ? 'font-bold text-green-600' : 'font-normal'}
+      >
+        {char}
+      </div>
+    {/each}
+    {#each bin2Padded as char, i}
+      <div
+        class={char === '1' && bin1Padded[i] === '1' ? 'font-bold text-green-600' : 'font-normal'}
+      >
+        {char}
+      </div>
     {/each}
     {#each resultBinPadded as char}
       {#if char === '0'}
@@ -42,7 +53,8 @@
       {/if}
     {/each}
   </NumberGrid>
-  <div class="pt-0 text-xl">
-    0b{resultBin} = <strong>{resultBase10}</strong>
+  <div class="pt-4 text-xl">
+    {number1}&nbsp;&amp;&nbsp;{number2} =&nbsp;0b{bin1}&nbsp;&amp;&nbsp;0b{bin2} =&nbsp;0b{resultBin}
+    =&nbsp;<strong>{resultBase10}</strong>
   </div>
 </div>

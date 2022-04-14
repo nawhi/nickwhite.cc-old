@@ -33,6 +33,6 @@
     </div>
   {/each}
 </NumberGrid>
-<div class="font-mono pt-5">
-  {decimalDigitsReversed.join(' + ')} =&nbsp;<strong>{result}</strong>
+<div class="font-mono pt-10">
+  0b{binary} = {decimalDigitsReversed.join(' + ')} =&nbsp;<strong>{result}</strong>
 </div>

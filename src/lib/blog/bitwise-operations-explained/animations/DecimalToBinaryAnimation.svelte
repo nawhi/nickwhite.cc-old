@@ -1,4 +1,6 @@
 <script lang="ts">
+  import NumberGrid from '../common/NumberGrid.svelte';
+
   export let number: number;
   const generateSteps = (target: number): { val: number; stop: boolean }[] => {
     const steps = [];
@@ -13,7 +15,10 @@
   $: steps = generateSteps(number);
 </script>
 
-<div class="md:max-w-[50%] py-4 grid grid-rows-{steps.length - 1} grid-cols-5 items-center text-center gap-3">
+<div
+  class="md:max-w-[50%] py-4 grid grid-rows-{steps.length -
+    1} grid-cols-5 items-center text-center gap-3 font-mono"
+>
   {#each steps as { val, stop }, i}
     <div>
       2<sup>{i}</sup>:
@@ -22,17 +27,26 @@
       &LeftFloor;{number} &div; 2<sup>{i}</sup>&RightFloor;&nbsp;= {Math.floor(number / val)}
       <br />
       {#if stop}
-        (<strong>STOP:</strong> result &lt; 1)
+        <span class="font-normal">(<strong>STOP:</strong> {Math.floor(number / val)} &lt; 1)</span>
       {:else}
         {Math.floor(number / val)}&nbsp;&percnt;&nbsp;2&nbsp;=&nbsp;{Math.floor(number / val) % 2}
       {/if}
     </div>
-    <div class="font-bold text-xl font-mono">
+    <div class="font-bold text-xl">
       {#if !stop}
         {Math.floor(number / val) % 2}
       {/if}
     </div>
   {/each}
 </div>
-<div>Ordering the bits from greatest to smallest, the result is:</div>
-<div class="inline-flex gap-2"><span class="font-mono">0b{number.toString(2)}</span></div>
+<div>Re-order the bits to give the result:</div>
+<div class="py-4">
+  <NumberGrid rows={2} cols={number.toString(2).length}>
+    {#each number.toString(2) as _, i}
+      <div class="h-full text-sm py-2">2<sup>{number.toString(2).length - (i + 1)}</sup></div>
+    {/each}
+    {#each number.toString(2) as digit, i}
+      <div class="h-full">{digit}</div>
+    {/each}
+  </NumberGrid>
+</div>
