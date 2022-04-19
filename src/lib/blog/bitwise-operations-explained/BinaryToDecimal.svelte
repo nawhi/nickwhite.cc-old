@@ -29,16 +29,6 @@
       <div class="text-red-400 font-semibold">
         Please enter a binary number, consisting only of digits 0 and 1
       </div>
-    {:else if binary === "10111110101001"}
-      <div>
-        <span>🥚🥚🥚 🐱‍🐉 🍫🍫 🥚🥚🥚</span>
-        <br/>
-        <span class="text-green-400 font-semibold">
-          HAPPY EASTER
-        </span>
-        <br/>
-        <span>Cupboard under the stairs</span>
-      </div>
     {:else if binary.length > 12}
       <div class="text-red-400 font-semibold">
         Please enter no more than twelve digits
