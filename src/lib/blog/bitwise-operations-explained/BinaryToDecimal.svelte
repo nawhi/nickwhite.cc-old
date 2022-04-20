@@ -1,5 +1,5 @@
 <script lang="ts">
-  import BinaryToDecimalAnimation from './animations/BinaryToDecimalAnimation.svelte';
+  import Calculation from './calculations/BinaryToDecimalCalculation.svelte';
   import Form from './common/InlineForm.svelte';
 
   let binary: string;
@@ -34,7 +34,7 @@
         Please enter no more than twelve digits
       </div>
     {:else}
-      <BinaryToDecimalAnimation {binary} />
+      <Calculation {binary} />
     {/if}
   </div>
 {/if}

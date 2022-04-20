@@ -1,6 +1,6 @@
 <script lang="ts">
   import InlineForm from './common/InlineForm.svelte';
-  import DecimalToBinaryAnimation from './animations/DecimalToBinaryAnimation.svelte';
+  import Calculation from './calculations/DecimalToBinaryCalculation.svelte';
 
   let number: number;
   let ready = false;
@@ -26,6 +26,6 @@
   {#if number > 2048}
     <div class="text-red-400 font-semibold">Please enter a number between 0 and 2048</div>
   {:else}
-    <DecimalToBinaryAnimation {number} />
+    <Calculation {number} />
   {/if}
 {/if}

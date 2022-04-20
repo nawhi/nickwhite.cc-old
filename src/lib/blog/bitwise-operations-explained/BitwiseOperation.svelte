@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Animation from './animations/BitwiseOperationAnimation.svelte';
+  import Calculation from './calculations/BitwiseOperationCalculation.svelte';
   import InlineForm from './common/InlineForm.svelte';
   import { onMount } from "svelte";
 
@@ -41,7 +41,7 @@
     <div class="font-semibold text-red-400">Please enter two numbers between 0 and 2048</div>
   {:else}
     <div class="py-4">
-      <Animation {number1} {number2} />
+      <Calculation {number1} {number2} />
     </div>
   {/if}
 {/if}
