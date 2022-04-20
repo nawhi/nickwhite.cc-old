@@ -43,9 +43,17 @@ To disambiguate between decimal and binary, you might see the binary number pref
 
 ### Converting decimal to binary
 
-If you have a decimal number and you want its binary form, you can get each binary digit by dividing by progressively higher powers of two, rounding the result _down_ to the nearest integer, and taking the remainder when dividing by two. This is the digit in the position of the power of two you divided by.
+If you have a decimal number, and you want its binary form, you can get it doing the following.
 
-This is much easier to see in practice.
+For each integer `i` starting at `0`:
+
+1. divide the decimal number by `2`<sup>`i`</sup>
+2. floor the result (round it to the lower of its two nearest integers)
+3. take the remainder when dividing by two - this is the integer in the `i`<sup>th</sup> position
+
+If in step 1 you get a number that is less than `1`, stop. Then the binary result will be the bits you already have arranged with the lowest last.
+
+This is much easier to see in practice. (NB: in the demo, `⌊X⌋` means flooring `X`.) 
 
 <div class="blog-widget">
   <DecimalToBinary/>
@@ -59,13 +67,11 @@ Going the other way is a lot easier: sum up the powers of two that have a `1` th
   <BinaryToDecimal/>
 </div>
 
-I had a moment of "the universe is mad, bro" over the idea that any number decomposes into the sum of powers of two, like some sort of programmer's Fourier transform.
-
 ### Bitwise operations
 
 All numbers are stored as an array of bits, each taking the value 1 or 0 and representing a digit of the number in binary form.
 
-Since each digit takes only two values, we can use Boolean operators (AND, OR, NOT, XOR, etc) on each pair of their digits to create a totally new binary number.
+Since each digit takes only two values, we can use Boolean operators (AND, OR, XOR, etc) on each pair of their digits to create a totally new binary number.
 
 This yields surprising but interesting results. To see it in action for bitwise AND, have a go below.
 
