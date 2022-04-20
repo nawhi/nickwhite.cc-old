@@ -23,6 +23,7 @@ const config = {
     },
     browser: { hydrate: true },
     prerender: {
+      default: true,
       crawl: true,
       enabled: true,
       onError: 'fail',
