@@ -28,7 +28,8 @@ const config = {
       enabled: true,
       onError: 'fail',
       entries: ['*']
-    }
+    },
+    trailingSlash: 'always'
   }
 };
 
