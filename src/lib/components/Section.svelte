@@ -8,7 +8,7 @@
       {title}
     </h2>
   </div>
-  <div class="flex-none text-lg text-gray-700 font-light md:flex-1 md:pl-20">
+  <div class="flex-none text-lg text-th-secondary font-light md:flex-1 md:pl-20">
     <slot />
   </div>
 </div>

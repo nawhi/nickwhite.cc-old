@@ -37,7 +37,7 @@ pre[class*='language-'] {
     @apply bg-th-background;
   }
 
-  p {
+  p, ul, ol {
     @apply text-th-secondary;
   }
 
@@ -112,7 +112,6 @@ pre[class*='language-'] {
   }
 
   .blog-content h6 {
-    @apply text-gray-700;
     @apply text-xs;
   }
 

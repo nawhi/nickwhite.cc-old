@@ -15,7 +15,7 @@
 <PageTitle {title} />
 <Header image={false} />
 <h1 class="mt-12 text-4xl text-th-primary font-bold">{title}</h1>
-<p class="text-gray-700 font-light pt-1.5">
+<p class="text-th-secondary font-light pt-1.5">
   Posted on {formattedDate}
 </p>
 
