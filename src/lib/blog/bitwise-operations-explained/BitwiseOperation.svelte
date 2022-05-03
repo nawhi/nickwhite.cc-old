@@ -24,7 +24,7 @@
     min="0"
     step="1"
   />
-  <div class="font-mono sm:px-2">&amp;</div>
+  <div class="font-mono text-th-primary sm:px-2">&amp;</div>
   <input
     class="w-1/4 sm:w-auto"
     type="number"
@@ -38,7 +38,7 @@
 </InlineForm>
 {#if ready}
   {#if number1 > 2048 || number2 > 2048}
-    <div class="font-semibold text-red-400">Please enter two numbers between 0 and 2048</div>
+    <div class="font-semibold text-th-error">Please enter two numbers between 0 and 2048</div>
   {:else}
     <div class="py-4">
       <Calculation {number1} {number2} />

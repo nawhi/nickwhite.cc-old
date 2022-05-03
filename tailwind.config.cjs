@@ -14,6 +14,8 @@ const config = {
         'th-secondary': 'var(--th-secondary)',
         'th-tertiary': 'var(--th-tertiary)',
         'th-subtle': 'var(--th-subtle)',
+        'th-action': 'var(--th-action)',
+        'th-action-focus': 'var(--th-action-focus)',
         'th-error': 'var(--th-error)'
       }
     }

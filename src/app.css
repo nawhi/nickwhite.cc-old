@@ -18,6 +18,8 @@ pre[class*='language-'] {
   --th-secondary: #374151; /* gray-700 */
   --th-tertiary: #6b7280; /* gray-500 */
   --th-subtle: #d1d5db; /* gray-300 */
+  --th-action: #67e8f9; /* cyan-300 */
+  --th-action-focus: #06b6d4; /* cyan-500 */
   --th-error: #f87171; /* red-400 */
 }
 
@@ -28,7 +30,9 @@ pre[class*='language-'] {
     --th-secondary: #94a3b8; /* slate-400 */
     --th-tertiary: #6b7280; /* slate-500 */
     --th-subtle: #475569; /* slate-600 */
-    --th-error: #b91c1c; /* red-700 */
+    --th-action: #0e7490; /* cyan-700 */
+    --th-action-focus: #06b6d4; /* cyan-500 */
+    --th-error: #ea580c; /* orange-600 */
   }
 }
 
