@@ -8,12 +8,12 @@
   :global(.form-with-styled-inputs > input) {
     @apply py-2 px-3 leading-tight;
     @apply shadow appearance-none focus:outline-none border rounded;
-    @apply dark:border-th-subtle dark:bg-th-subtle placeholder-th-tertiary text-th-primary;
+    @apply border-th-subtle dark:bg-th-subtle placeholder-th-tertiary text-th-primary;
   }
 
   :global(.form-with-styled-inputs > button) {
     @apply py-2 px-4 rounded font-bold focus:outline-none;
-    @apply bg-th-action hover:bg-th-action-focus transition-all text-white dark:text-th-primary;
+    @apply bg-th-action hover:bg-th-action-focus transition-all text-th-background dark:text-th-primary;
   }
 </style>
 
