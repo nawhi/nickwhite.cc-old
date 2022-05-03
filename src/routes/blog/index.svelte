@@ -11,6 +11,7 @@
   import Section from '$lib/components/Section.svelte';
   import PostList from '$lib/components/PostList.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
+  import type { Post } from '$lib/types';
 
   export let posts: Post[];
 

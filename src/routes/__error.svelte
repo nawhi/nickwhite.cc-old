@@ -43,10 +43,12 @@
 <svelte:head>
   <title>{title}</title>
 </svelte:head>
-<h1 class="text-lg font-bold">{status} {message}</h1>
-<div class="pt-2">
-  {#if extra}
-    <p>{extra}</p>
-  {/if}
-  <p><a class="underline" href="/">Back to safety</a></p>
+<div class="h-full w-full">
+  <h1 class="text-lg font-bold">{status} {message}</h1>
+  <div class="pt-2">
+    {#if extra}
+      <p>{extra}</p>
+    {/if}
+    <p><a class="underline" href="/">Back to safety</a></p>
+  </div>
 </div>

@@ -26,11 +26,11 @@
 {#if ready}
   <div class="py-4">
     {#if /[^01]/.test(binary)}
-      <div class="text-red-400 font-semibold">
+      <div class="text-th-error font-semibold">
         Please enter a binary number, consisting only of digits 0 and 1
       </div>
     {:else if binary.length > 12}
-      <div class="text-red-400 font-semibold">
+      <div class="text-th-error font-semibold">
         Please enter no more than twelve digits
       </div>
     {:else}
