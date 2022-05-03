@@ -28,7 +28,7 @@
     {#if tags}
       <ul class="text-xs flex flex-wrap gap-2 pt-2 pb-1">
         {#each tags as tag}
-          <li class="px-2 bg-th-subtle rounded-full border border-th-subtle text-th-primary">
+          <li class="px-2 dark:bg-th-subtle rounded-full border border-th-subtle dark:text-th-primary">
             {tag}
           </li>
         {/each}
