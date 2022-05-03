@@ -7,15 +7,15 @@ const config = {
     extend: {
       screens: {
         xs: '480px'
+      },
+      colors: {
+        'th-background': 'var(--th-background)',
+        'th-primary': 'var(--th-primary)',
+        'th-secondary': 'var(--th-secondary)',
+        'th-tertiary': 'var(--th-tertiary)',
+        'th-subtle': 'var(--th-subtle)',
+        'th-error': 'var(--th-error)'
       }
-    },
-    colors: {
-      background: 'var(--background)',
-      primary: 'var(--primary)',
-      secondary: 'var(--secondary)',
-      tertiary: 'var(--tertiary)',
-      subtle: 'var(--subtle)',
-      error: 'var(--error)'
     }
   },
   darkMode: 'media',

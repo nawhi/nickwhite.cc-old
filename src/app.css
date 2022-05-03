@@ -13,34 +13,36 @@ pre[class*='language-'] {
 /***** COLOUR SCHEME *****/
 
 :root {
-  --background: #fff; /* white */
-  --primary: #111827; /* gray-900 */
-  --secondary: #374151; /* gray-700 */
-  --tertiary: #6b7280; /* gray-500 */
-  --subtle: #d1d5db; /* gray-300 */
-  --error: #f87171; /* red-400 */
+  --th-background: #fff; /* white */
+  --th-primary: #111827; /* gray-900 */
+  --th-secondary: #374151; /* gray-700 */
+  --th-tertiary: #6b7280; /* gray-500 */
+  --th-subtle: #d1d5db; /* gray-300 */
+  --th-error: #f87171; /* red-400 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #111827; /* slate-900 */
-    --primary: #cbd5e1; /* slate-300 */
-    --secondary: #94a3b8; /* slate-400 */
-    --tertiary: #6b7280; /* slate-500 */
-    --subtle: #475569; /* slate-600 */
-    --error: #b91c1c; /* red-700 */
+    --th-background: #111827; /* slate-900 */
+    --th-primary: #cbd5e1; /* slate-300 */
+    --th-secondary: #94a3b8; /* slate-400 */
+    --th-tertiary: #6b7280; /* slate-500 */
+    --th-subtle: #475569; /* slate-600 */
+    --th-error: #b91c1c; /* red-700 */
   }
 }
 
 @layer base {
-  * {
-    @apply text-gray-700;
-    @apply dark:text-slate-400;
+  body {
+    @apply bg-th-background;
+  }
+
+  p {
+    @apply text-th-secondary;
   }
 
   a {
-    @apply underline;
-    @apply dark:text-slate-300;
+    @apply text-th-primary;
   }
 
   .blog-content {
@@ -76,11 +78,11 @@ pre[class*='language-'] {
   h3,
   h4,
   h5 {
-    @apply text-gray-900 dark:text-slate-300;
+    @apply text-th-primary;
   }
 
   h6 {
-    @apply text-gray-700 dark:text-slate-400;
+    @apply text-th-secondary;
   }
 
   .blog-content h1,

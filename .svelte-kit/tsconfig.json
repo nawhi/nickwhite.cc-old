@@ -15,7 +15,7 @@
 		],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
-		"preserveValueImports": true,
+		"preserveValueImports": true
 	},
 	"include": [
 		"../src/**/*.js",
