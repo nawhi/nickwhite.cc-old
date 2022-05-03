@@ -1,3 +1,4 @@
+/** @type import('tailwindcss').Config */
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -8,6 +9,8 @@ const config = {
 			}
 		}
 	},
+
+	darkMode: "media",
 
 	plugins: []
 };
