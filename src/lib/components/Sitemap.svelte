@@ -5,8 +5,8 @@
   const getLinkStyle = (route) =>
     `inline-block py-2 text-xs ${
       route === $page.url.pathname
-        ? 'font-bold text-black'
-        : 'text-gray-700 hover:text-black'
+        ? 'font-bold text-th-primary'
+        : 'text-th-secondary hover:text-th-primary'
     }`;
 </script>
 

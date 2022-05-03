@@ -4,7 +4,7 @@
 
 <div class="block pt-12 md:flex">
   <div class="pb-6 md:w-full md:max-w-150 md:p-0">
-    <h2 class="font-xs font-light tracking-widest text-sm text-gray-700 leading-normal uppercase">
+    <h2 class="font-xs font-light tracking-widest text-sm text-th-secondary leading-normal uppercase">
       {title}
     </h2>
   </div>

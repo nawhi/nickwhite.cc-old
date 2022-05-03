@@ -42,7 +42,7 @@ pre[class*='language-'] {
   }
 
   a {
-    @apply text-th-primary;
+    @apply text-th-primary hover:underline hover:underline-offset-1;
   }
 
   .blog-content {
