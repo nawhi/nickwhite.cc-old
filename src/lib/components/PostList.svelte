@@ -1,6 +1,6 @@
 <script lang="ts">
   import SummaryItem from '$lib/components/SummaryItem.svelte';
-  import { Post } from "$lib/types";
+  import type { Post } from "$lib/types";
 
   export let posts: Post[];
   export let limit: number = Infinity;

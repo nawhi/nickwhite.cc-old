@@ -11,16 +11,20 @@ pre[class*='language-'] {
 }
 
 @layer base {
-  .blog-content {
+  * {
     @apply text-gray-700;
+    @apply dark:text-slate-400;
+  }
+
+  a {
+    @apply underline;
+    @apply dark:text-slate-300;
+  }
+
+  .blog-content {
     @apply max-w-prose;
     text-rendering: optimizeLegibility;
     @apply text-lg;
-  }
-
-  .blog-content a {
-    @apply text-black;
-    @apply underline;
   }
 
   .blog-content p,
@@ -45,45 +49,47 @@ pre[class*='language-'] {
     @apply list-decimal;
   }
 
-  .blog-content h1 {
-    @apply text-4xl;
-    @apply text-gray-900;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-gray-900 dark:text-slate-300;
+  }
+
+  h6 {
+    @apply text-gray-700 dark:text-slate-400;
+  }
+
+  .blog-content h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
     @apply my-3;
+  }
+
+  .blog-content h1 {
+    @apply text-4xl;
   }
 
   .blog-content h2 {
     @apply text-2xl;
-    @apply text-gray-900;
-    @apply font-bold;
-    @apply my-3;
   }
 
   .blog-content h3 {
     @apply text-xl;
-    @apply text-gray-900;
-    @apply font-bold;
-    @apply my-3;
-  }
-
-  .blog-content h4 {
-    @apply text-gray-900;
-    @apply font-bold;
-    @apply my-3;
   }
 
   .blog-content h5 {
-    @apply text-gray-900;
     @apply text-sm;
-    @apply font-bold;
-    @apply my-3;
   }
 
   .blog-content h6 {
     @apply text-gray-700;
     @apply text-xs;
-    @apply font-bold;
-    @apply my-3;
   }
 
   .blog-content blockquote {
