@@ -70,16 +70,20 @@ pre[class*='language-'] {
 
   .blog-content ul,
   .blog-content ol {
-    @apply mb-6;
-    @apply ml-10;
+    @apply mb-6 ml-10;
   }
 
   .blog-content ul li {
-    @apply list-disc;
+    @apply list-disc mb-1.5;
   }
 
   .blog-content ol li {
-    @apply list-decimal;
+    @apply list-decimal mb-1.5;
+  }
+
+  /* mdsvex generates a <p> element inside unordered lists */
+  .blog-content ol li > p {
+    @apply mb-1.5;
   }
 
   h1,
