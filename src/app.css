@@ -12,11 +12,11 @@ pre[class*='language-'] {
 }
 
 :root {
-  --th-background: #fff; /* white */
-  --th-primary: #111827; /* gray-900 */
-  --th-secondary: #374151; /* gray-700 */
-  --th-tertiary: #6b7280; /* gray-500 */
-  --th-subtle: #d1d5db; /* gray-300 */
+  --th-background: #fafafa; /* zinc-50 */
+  --th-primary: #27272a; /* zinc-800 */
+  --th-secondary: #52525b; /* zinc-600 */
+  --th-tertiary: #71717a; /* zinc-500 */
+  --th-subtle: #e4e4e7; /* zinc-200 */
   --th-action: #10b981; /* emerald-500 */
   --th-action-focus: #047857; /* emerald-700 */
   --th-error: #f87171; /* red-400 */
@@ -54,6 +54,10 @@ pre[class*='language-'] {
     @apply max-w-prose;
     text-rendering: optimizeLegibility;
     @apply text-lg;
+  }
+
+  .blog-content strong {
+    @apply text-th-primary;
   }
 
   .blog-content p,
