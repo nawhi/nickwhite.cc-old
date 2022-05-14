@@ -47,7 +47,7 @@ pre[class*='language-'] {
   }
 
   a {
-    @apply text-th-primary hover:underline hover:underline-offset-1;
+    @apply text-th-primary decoration-1 hover:underline hover:underline-offset-2;
   }
 
   .blog-content {
@@ -66,6 +66,10 @@ pre[class*='language-'] {
     @apply mb-6;
     @apply font-sans;
     @apply text-lg;
+  }
+
+  .blog-content a {
+    @apply underline underline-offset-2 hover:no-underline;
   }
 
   .blog-content ul,
