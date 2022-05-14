@@ -50,6 +50,18 @@ pre[class*='language-'] {
     @apply text-th-primary decoration-1 hover:underline hover:underline-offset-2;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-th-primary;
+  }
+
+  h6 {
+    @apply text-th-secondary;
+  }
+
   .blog-content {
     @apply max-w-prose;
     text-rendering: optimizeLegibility;
@@ -90,26 +102,14 @@ pre[class*='language-'] {
     @apply mb-1.5;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply text-th-primary;
-  }
-
-  h6 {
-    @apply text-th-secondary;
-  }
-
   .blog-content h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4,
+  .blog-content h5,
+  .blog-content h6 {
     @apply font-bold;
-    @apply my-3;
+    @apply mt-3 mb-1.5;
   }
 
   .blog-content h1 {
