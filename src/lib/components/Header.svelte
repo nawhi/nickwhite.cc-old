@@ -18,7 +18,7 @@
     <h1 class="text-4xl xs:text-5xl text-th-primary font-bold leading-tight hover:text-block">
       <a href="/">{siteMetadata.name}</a>
     </h1>
-    <p class="text-th-secondary">{siteMetadata.description}</p>
+    <p class="text-th-secondary py-1 font-serif text-lg tracking-wide">{siteMetadata.description}</p>
     <SocialIcons />
     <Sitemap />
     <slot />
