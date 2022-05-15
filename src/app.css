@@ -47,7 +47,7 @@ pre[class*='language-'] {
   }
 
   a {
-    @apply text-th-primary decoration-1 hover:underline hover:underline-offset-2;
+    @apply text-th-primary decoration-1;
   }
 
   h1,
@@ -113,23 +113,19 @@ pre[class*='language-'] {
   }
 
   .blog-content h1 {
-    @apply text-4xl;
+    @apply text-2xl xs:text-3xl;
   }
 
   .blog-content h2 {
-    @apply text-2xl;
+    @apply text-xl xs:text-2xl;
   }
 
   .blog-content h3 {
-    @apply text-xl;
+    @apply text-lg xs:text-xl;
   }
 
-  .blog-content h5 {
-    @apply text-sm;
-  }
-
-  .blog-content h6 {
-    @apply text-xs;
+  .blog-content h4 {
+    @apply text-base xs:text-lg;
   }
 
   .blog-content blockquote {
