@@ -80,6 +80,10 @@ pre[class*='language-'] {
     @apply text-lg;
   }
 
+  .blog-content pre {
+    @apply mb-6;
+  }
+
   .blog-content a {
     @apply underline underline-offset-2 hover:no-underline;
   }
