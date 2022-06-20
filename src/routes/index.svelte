@@ -11,7 +11,7 @@
   import Header from '$lib/components/Header.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
   import PostList from '$lib/components/PostList.svelte';
-  import type { Post } from '$lib/types';
+  import type { Post } from "$lib/types";
 
   export let posts: Post[];
 </script>

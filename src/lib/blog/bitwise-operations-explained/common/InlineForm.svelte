@@ -7,18 +7,18 @@
 <style>
   :global(.form-with-styled-inputs > input) {
     @apply py-2 px-3 leading-tight;
-    @apply appearance-none rounded border shadow focus:outline-none;
-    @apply border-th-subtle text-th-primary placeholder-th-tertiary dark:bg-th-subtle;
+    @apply shadow appearance-none focus:outline-none border rounded;
+    @apply border-th-subtle dark:bg-th-subtle placeholder-th-tertiary text-th-primary;
   }
 
   :global(.form-with-styled-inputs > button) {
-    @apply rounded py-2 px-4 font-bold focus:outline-none;
-    @apply bg-th-action text-th-background transition-all hover:bg-th-action-focus dark:text-th-primary;
+    @apply py-2 px-4 rounded font-bold focus:outline-none;
+    @apply bg-th-action hover:bg-th-action-focus transition-all text-th-background dark:text-th-primary;
   }
 </style>
 
 <form
-  class="form-with-styled-inputs flex flex-wrap items-center gap-4 p-1"
+  class="form-with-styled-inputs p-1 flex flex-wrap items-center gap-4"
   on:submit|preventDefault={(e) => {
     dispatch('submit', new FormData(e.target));
   }}

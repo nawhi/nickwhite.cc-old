@@ -38,6 +38,7 @@ This applies to `1` as well, because as usual in computer science, we start not 
 
 To disambiguate between decimal and binary, you might see the binary number prefixed with a zero and a lower-case `b`. So `0b10110` means 22 in binary, not 10,110 in decimal.
 
+
 ## <a id="interactive-bit" style="text-decoration: none">The Interactive Bit</a>
 
 ### Converting decimal to binary
@@ -52,7 +53,7 @@ For each integer `i` starting at `0`:
 
 If in step 1 you get a number that is less than `1`, stop. Then the binary result will be the bits you already have arranged with the lowest last.
 
-This is much easier to see in practice. (NB: in the demo, `⌊X⌋` means flooring `X`.)
+This is much easier to see in practice. (NB: in the demo, `⌊X⌋` means flooring `X`.) 
 
 <div class="blog-widget">
   <DecimalToBinary/>

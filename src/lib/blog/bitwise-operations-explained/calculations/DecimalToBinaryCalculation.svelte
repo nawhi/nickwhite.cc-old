@@ -15,10 +15,10 @@
   $: steps = generateSteps(number);
 </script>
 
-<div class="font-mono text-th-primary">
+<div class="text-th-primary font-mono">
   <div
-    class="grid py-4 text-th-secondary md:max-w-[50%] grid-rows-{steps.length -
-      1} grid-cols-5 items-center gap-3 text-center"
+    class="text-th-secondary md:max-w-[50%] py-4 grid grid-rows-{steps.length -
+      1} grid-cols-5 items-center text-center gap-3"
   >
     {#each steps as { val, stop }, i}
       <div>
@@ -28,14 +28,13 @@
         &LeftFloor;{number} &div; 2<sup>{i}</sup>&RightFloor;&nbsp;= {Math.floor(number / val)}
         <br />
         {#if stop}
-          <span class="font-normal text-th-primary"
-            >(<strong>STOP:</strong> {Math.floor(number / val)} &lt; 1)</span
+          <span class="font-normal text-th-primary">(<strong>STOP:</strong> {Math.floor(number / val)} &lt; 1)</span
           >
         {:else}
           {Math.floor(number / val)}&nbsp;&percnt;&nbsp;2&nbsp;=&nbsp;{Math.floor(number / val) % 2}
         {/if}
       </div>
-      <div class="text-xl font-bold text-th-primary">
+      <div class="font-bold text-xl text-th-primary">
         {#if !stop}
           {Math.floor(number / val) % 2}
         {/if}
@@ -46,7 +45,7 @@
   <div class="py-4">
     <NumberGrid rows={2} cols={number.toString(2).length}>
       {#each number.toString(2) as _, i}
-        <div class="h-full py-2 text-sm">2<sup>{number.toString(2).length - (i + 1)}</sup></div>
+        <div class="h-full text-sm py-2">2<sup>{number.toString(2).length - (i + 1)}</sup></div>
       {/each}
       {#each number.toString(2) as digit, i}
         <div class="h-full">{digit}</div>

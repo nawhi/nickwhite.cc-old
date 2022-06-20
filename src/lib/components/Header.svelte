@@ -4,23 +4,21 @@
   import { siteMetadata } from '$lib/content/meta';
 </script>
 
-<div class="mb-6 block md:flex">
-  <div class="max-w-150 w-full">
+<div class="block mb-6 md:flex">
+  <div class="w-full max-w-150">
     <a href="/">
       <img
         src="/img/profile.jpg"
         alt={siteMetadata.name}
-        class="transform rounded-full transition-all duration-150 hover:scale-105"
+        class="rounded-full transform transition-all duration-150 hover:scale-105"
       />
     </a>
   </div>
-  <div class="flex-none pt-6 md:flex-1 md:pt-1 md:pl-20">
-    <h1 class="hover:text-block text-4xl font-bold leading-tight text-th-primary xs:text-5xl">
+  <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20">
+    <h1 class="text-4xl xs:text-5xl text-th-primary font-bold leading-tight hover:text-block">
       <a href="/">{siteMetadata.name}</a>
     </h1>
-    <p class="py-1 font-serif text-lg tracking-wide text-th-secondary">
-      {siteMetadata.description}
-    </p>
+    <p class="text-th-secondary py-1 font-serif text-lg tracking-wide">{siteMetadata.description}</p>
     <SocialIcons />
     <Sitemap />
     <slot />

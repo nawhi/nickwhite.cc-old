@@ -10,14 +10,14 @@
 </script>
 
 <div class="mb-6">
-  <h3 class="pb-1 font-semibold text-th-primary">
+  <h3 class="font-semibold text-th-primary pb-1">
     {#if link}
       <Link href={link}>{name}</Link>
     {:else}
       {name}
     {/if}
   </h3>
-  <div class="text-lg font-light text-th-secondary">
+  <div class="text-lg text-th-secondary font-light">
     <div class={longDesc && 'italic'}>
       {#each toArray(shortDesc) as line}
         <p class="pt-1">{line}</p>
@@ -26,17 +26,15 @@
   </div>
   {#if longDesc}
     {#if tags}
-      <ul class="flex flex-wrap gap-2 pt-2 pb-1 text-xs">
+      <ul class="text-xs flex flex-wrap gap-2 pt-2 pb-1">
         {#each tags as tag}
-          <li
-            class="rounded-full border border-th-subtle px-2 dark:bg-th-subtle dark:text-th-primary"
-          >
+          <li class="px-2 dark:bg-th-subtle rounded-full border border-th-subtle dark:text-th-primary">
             {tag}
           </li>
         {/each}
       </ul>
     {/if}
-    <div class="pt-1 text-base text-th-tertiary">
+    <div class="text-base text-th-tertiary pt-1">
       {#each toArray(longDesc) as line}
         <p class="pt-1 pb-1">{line}</p>
       {/each}

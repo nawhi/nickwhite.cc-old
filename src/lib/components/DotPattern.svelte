@@ -1,5 +1,5 @@
 <svg
-  class="fixed right-0 top-5 z-0 hidden transform xl:block"
+  class="hidden fixed transform right-0 top-5 z-0 xl:block"
   width="404"
   height="784"
   fill="none"

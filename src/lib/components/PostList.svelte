@@ -12,5 +12,5 @@
   <SummaryItem name={title} link={href} shortDesc={description} />
 {/each}
 {#if posts.length > limit}
-  <a class="hover:text-black text-sm text-th-tertiary" href="/blog"> View all posts &rarr; </a>
+  <a class="text-th-tertiary text-sm hover:text-black" href="/blog"> View all posts &rarr; </a>
 {/if}

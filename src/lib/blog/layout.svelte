@@ -14,12 +14,12 @@
 
 <Sitemap />
 <PageTitle {title} />
-<h1 class="mt-6 text-3xl font-bold text-th-primary xs:text-4xl">{title}</h1>
-<p class="pt-2 pb-1 font-serif text-lg tracking-wide text-th-secondary">{description}</p>
-<p class="pt-1 font-light text-th-tertiary">
+<h1 class="mt-6 text-3xl xs:text-4xl text-th-primary font-bold">{title}</h1>
+<p class="text-th-secondary pt-2 pb-1 font-serif tracking-wide text-lg">{description}</p>
+<p class="text-th-tertiary font-light pt-1">
   Posted on {formattedDate}
 </p>
 
-<div class="blog-content mt-12">
+<div class="mt-12 blog-content">
   <slot />
 </div>

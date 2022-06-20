@@ -1,7 +1,7 @@
 <script lang="ts">
   import Calculation from './calculations/BitwiseOperationCalculation.svelte';
   import InlineForm from './common/InlineForm.svelte';
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
   let number1: number, number2: number;
   let ready = false;
