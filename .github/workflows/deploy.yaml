@@ -30,8 +30,6 @@ jobs:
           pnpm run build
 
       - name: Deploy to Firebase
-        run: |
-          pnpm install firebase-tools
-          pnpm firebase --project nick-white-cc --token "$FIREBASE_TOKEN" deploy
+        run: pnpm firebase --project nick-white-cc --token "$FIREBASE_TOKEN" deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
