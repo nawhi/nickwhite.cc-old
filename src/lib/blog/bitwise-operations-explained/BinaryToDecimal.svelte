@@ -10,29 +10,22 @@
 </script>
 
 <Form
-  class="p-1 flex flex-row"
+  class="flex flex-row p-1"
   on:submit={(e) => {
     ready = true;
     binary = e.detail.get('number1');
   }}
 >
-  <input
-    required
-    name="number1"
-    placeholder="Enter a binary number"
-    inputmode="numeric"
-  />
+  <input required name="number1" placeholder="Enter a binary number" inputmode="numeric" />
 </Form>
 {#if ready}
   <div class="py-4">
     {#if /[^01]/.test(binary)}
-      <div class="text-th-error font-semibold">
+      <div class="font-semibold text-th-error">
         Please enter a binary number, consisting only of digits 0 and 1
       </div>
     {:else if binary.length > 12}
-      <div class="text-th-error font-semibold">
-        Please enter no more than twelve digits
-      </div>
+      <div class="font-semibold text-th-error">Please enter no more than twelve digits</div>
     {:else}
       <Calculation {binary} />
     {/if}

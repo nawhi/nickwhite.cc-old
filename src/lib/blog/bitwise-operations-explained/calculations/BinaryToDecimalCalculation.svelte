@@ -20,19 +20,25 @@
 
 <NumberGrid rows={3} cols={binary.length}>
   {#each binary as digit, i}
-    <div class="h-full {digit === '0' ? 'text-th-tertiary' : 'text-th-primary font-bold'}">{digit}</div>
+    <div class="h-full {digit === '0' ? 'text-th-tertiary' : 'text-th-primary font-bold'}">
+      {digit}
+    </div>
   {/each}
   {#each powersOfTwoReversed as powerOfTwo, ix}
-    <div class="text-sm pt-4 {binary[ix] === '0' ? 'text-th-tertiary' : 'text-th-primary font-bold'}">
+    <div
+      class="pt-4 text-sm {binary[ix] === '0' ? 'text-th-tertiary' : 'text-th-primary font-bold'}"
+    >
       2<sup>{powerOfTwo}</sup>
     </div>
   {/each}
   {#each powersOfTwoReversed as powerOfTwo, ix}
-    <div class="text-sm pt-4 {binary[ix] === '0' ? 'text-th-tertiary' : 'text-th-primary font-bold'}">
+    <div
+      class="pt-4 text-sm {binary[ix] === '0' ? 'text-th-tertiary' : 'text-th-primary font-bold'}"
+    >
       {Math.pow(2, powerOfTwo)}
     </div>
   {/each}
 </NumberGrid>
-<div class="font-mono text-th-primary pt-10">
+<div class="pt-10 font-mono text-th-primary">
   0b{binary} = {decimalDigitsReversed.join(' + ')} =&nbsp;<strong>{result}</strong>
 </div>

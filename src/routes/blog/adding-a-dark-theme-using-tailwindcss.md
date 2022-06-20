@@ -8,14 +8,13 @@ As someone who spends pretty much their entire working life staring at a compute
 
 For me, as for many other developers, this has meant embracing dark mode in a lot of apps that I use.
 
-The jury is still out on whether light-on-dark or dark-on-light is actually better for one's eyes, but from I've found that on all but the sunniest days I prefer the darker tones of a colour scheme like [Dracula](https://www.draculatheme.com) to anything in "light mode". 
-
+The jury is still out on whether light-on-dark or dark-on-light is actually better for one's eyes, but from I've found that on all but the sunniest days I prefer the darker tones of a colour scheme like [Dracula](https://www.draculatheme.com) to anything in "light mode".
 
 Given this, it was only natural that I should look to add a dark mode to my website.
 
 ### How Tailwind works
 
-My site is built with Tailwind CSS. Tailwind is a framework which uses small utility classes to style your HTML. 
+My site is built with Tailwind CSS. Tailwind is a framework which uses small utility classes to style your HTML.
 
 Tailwind's most talked-about advantage is that your styles are in the actual HTML, so you don't have to tab back and forth between a separate CSS file (or a `styled.div` declared 50 lines above) to see the style of an element.
 
@@ -83,15 +82,15 @@ Now the CSS looks like this:
 }
 
 @media (prefers-color-scheme: dark) {
-  dark\\:.bg-slate-900 {
+  dark\\: .bg-slate-900 {
     background-color: #111827;
   }
 
-  dark\\:.text-slate-300 {
+  dark\\: .text-slate-300 {
     color: #cbd5e1;
   }
 
-  dark\\:.text-slate-400 {
+  dark\\: .text-slate-400 {
     color: #94a3b8;
   }
 }
@@ -103,8 +102,8 @@ You probably spotted the issues with this format before I did. Firstly, it's a h
 
 I realised that I would need to declare upfront which colours I wanted to use in a mode-agnostic way. I decided to follow an approach I'd seen at work, where we had a theme with "primary" and "secondary" colours. I also added a "background" colour, as obviously my background could not remain white in the dark colour scheme.
 
+### Creating a colour palette
 
-### Creating a colour palette 
 My code could now look like this:
 
 ```html

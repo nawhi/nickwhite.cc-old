@@ -118,11 +118,11 @@ pre[class*='language-'] {
   }
 
   .blog-content ul li {
-    @apply list-disc mb-1.5;
+    @apply mb-1.5 list-disc;
   }
 
   .blog-content ol li {
-    @apply list-decimal mb-1.5;
+    @apply mb-1.5 list-decimal;
   }
 
   /* mdsvex generates a <p> element inside unordered lists */
