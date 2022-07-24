@@ -10,3 +10,7 @@ It is based on the [devfolio template by Ryan Fitzgerald](https://github.com/Rya
 pnpm install
 pnpm run dev
 ```
+
+### Testing out whether you can embed a local image from the repositoryT in a README file
+
+![This is an image](/static/img/fields-as-variadic-tuple-error.png)
