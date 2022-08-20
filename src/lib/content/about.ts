@@ -35,13 +35,23 @@ export const about = {
   ],
   experience: [
     {
+      name: 'Daaci',
+      description: ['Senior Frontend Software Engineer, 2022 - pres.'],
+      link: 'https://daaci.com',
+      technologies: ['Node.js', 'React.js', 'Next.js', 'TypeScript', 'Material UI', 'Tailwind CSS'],
+      bio: [
+        "Daaci is building a composer-focused generative music composition system using machine learning techniques informed by musicology. Its Meta-Composition Interface will have applications in realtime gaming soundtracks, fan engagement, and film & TV music composition.",
+        "I joined in August 2022 and so far have been familiarising myself with the core IP, prototyping UI designs, and exploring the Web Audio API's capabilities for live audio playback."
+      ]
+    },
+    {
       name: 'Triptease',
-      description: ['Senior Software Engineer, 2021 - pres.', 'Software Engineer, 2020 - 2021'],
+      description: ['Senior Software Engineer, 2021 - 2022', 'Software Engineer, 2020 - 2021'],
       link: 'https://triptease.com',
       technologies: ['Node.js', 'Terraform', 'React.js', 'TypeScript', 'MongoDB'],
       bio: [
-        'We are currently working on the Targeted Messages product, including the UI of the messages themselves, a rich content editor with live preview for message creation, content database and CDN, event tracking and analytics platform.',
-        'Previously, we built a feed of hotel prices and scaled it from scratch to serving a million prices a day from over 1,000 hotels. The prices were sourced from user tracking, screen-scraping and algorithmic inference.',
+        'Worked on the Targeted Messages product, including the UI of the messages themselves, a rich content editor with live preview for message creation, content database and CDN, event tracking and analytics platform.',
+        'Previously, my team built a feed of hotel prices and scaled it from scratch to serving a million prices a day from over 1,000 hotels. The prices were sourced from user tracking, screen-scraping and algorithmic inference.',
         'Triptease engineers work full-stack, including all development, ops and SRE, in small autonomous squads.'
       ]
     },
