@@ -4,7 +4,7 @@
 
   export let name: string,
     shortDesc: string | string[],
-    link: string | undefined,
+    link: string | undefined = undefined,
     longDesc: string[] | undefined = undefined,
     tags: string[] | undefined = undefined;
 </script>

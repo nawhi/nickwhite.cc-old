@@ -47,7 +47,7 @@
       {#each number.toString(2) as _, i}
         <div class="h-full text-sm py-2">2<sup>{number.toString(2).length - (i + 1)}</sup></div>
       {/each}
-      {#each number.toString(2) as digit, i}
+      {#each number.toString(2) as digit}
         <div class="h-full">{digit}</div>
       {/each}
     </NumberGrid>

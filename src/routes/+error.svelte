@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
 
-  const { status, error } = $page;
+  const { status } = $page;
 
   let title: string, message: string;
 
@@ -14,20 +14,14 @@
   }
 </script>
 
-<style>
-  p {
-    @apply py-1;
-  }
-</style>
-
 <svelte:head>
   <title>{title}</title>
 </svelte:head>
 <div class="h-full w-full">
   <h1 class="text-lg font-bold">{title}</h1>
   <div class="pt-2">
-    <p>{message}</p>
-    <p>
+    <p class="py-1">{message}</p>
+    <p class="py-1">
       <a class="underline" href="/">Back to safety</a>
     </p>
   </div>
