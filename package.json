@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.29",
-    "@sveltejs/kit": "next",
+    "@sveltejs/kit": "^1.0.0-next.427",
     "autoprefixer": "^10.4.2",
     "firebase-tools": "^10.1.4",
     "mdsvex": "^0.10.5",
