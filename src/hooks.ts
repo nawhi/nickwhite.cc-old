@@ -1,9 +1,5 @@
-import type { GetSession, Handle } from '@sveltejs/kit';
 import { dev } from '$app/env';
-
-export const getSession: GetSession = async (event) => ({
-  posts: event.locals.posts
-});
+import {Handle} from "@sveltejs/kit";
 
 export const handle: Handle = async ({ event, resolve }) => {
   const routes = Object.entries(import.meta.glob('/src/routes/blog/*.md'));
@@ -14,6 +10,7 @@ export const handle: Handle = async ({ event, resolve }) => {
       return { ...metadata, filename };
     })
   );
+  console.log("APPLYING LOCALS POSTS")
   event.locals.posts = posts
     .map((post) => ({
       ...post,
