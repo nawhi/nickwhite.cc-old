@@ -18,9 +18,6 @@ const config = {
 
   kit: {
     adapter: adapter(),
-    files: {
-      hooks: 'src/hooks'
-    },
     browser: { hydrate: true },
     prerender: {
       default: true,
