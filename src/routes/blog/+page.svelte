@@ -1,12 +1,10 @@
-<script context="module" lang="ts">
-  export const load = ({ session }: App.Session) => ({
-    props: {
-      posts: session.posts
-    }
-  });
-</script>
-
 <script lang="ts">
+  throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+  // Suggestion (check code before using, and possibly convert to data.X access later):
+  // import type { PageData } from './$types';
+  // export let data: PageData;
+  // $: ({ posts } = data);
+
   import Header from '$lib/components/Header.svelte';
   import Section from '$lib/components/Section.svelte';
   import PostList from '$lib/components/PostList.svelte';
