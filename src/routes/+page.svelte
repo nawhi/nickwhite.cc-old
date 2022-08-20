@@ -1,6 +1,7 @@
-<script>
-  /** @type import('./$types').PageData */
-  export let data;
+<script lang="ts">
+  import type { Post } from '$lib/types';
+
+  export let data: { posts: Post[] };
 
   import Section from '$lib/components/Section.svelte';
   import Header from '$lib/components/Header.svelte';

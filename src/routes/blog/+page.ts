@@ -1,3 +1,3 @@
-export const load = ({ session }: App.Session) => ({
-  posts: session.posts
-});
+import { resolvePosts } from '$lib/resolvePosts';
+
+export const load = async () => ({ posts: await resolvePosts() });

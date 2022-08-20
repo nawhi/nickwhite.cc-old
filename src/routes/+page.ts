@@ -1,7 +1,3 @@
+import { resolvePosts } from '$lib/resolvePosts';
 
-export const load = (event) => {
-  console.log({locals:event.locals})
-  return {
-    posts: event.locals.posts
-  }
-}
+export const load = async () => ({ posts: await resolvePosts() });

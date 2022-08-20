@@ -4,5 +4,5 @@ export interface Post {
   description: string;
   unlisted?: boolean;
   draft?: boolean;
-  filename: string;
+  href: string;
 }

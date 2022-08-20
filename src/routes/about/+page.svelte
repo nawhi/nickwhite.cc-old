@@ -31,7 +31,7 @@
   {/each}
 </Section>
 <Section title="Skills">
-  {#each skills as { name, link, description }}
-    <SummaryItem {name} {link} shortDesc={description} />
+  {#each skills as { name, description }}
+    <SummaryItem {name} shortDesc={description} />
   {/each}
 </Section>
