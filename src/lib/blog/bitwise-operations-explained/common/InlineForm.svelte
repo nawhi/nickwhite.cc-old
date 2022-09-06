@@ -4,7 +4,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<style>
+<style lang="postcss">
   :global(.form-with-styled-inputs > input) {
     @apply py-2 px-3 leading-tight;
     @apply shadow appearance-none focus:outline-none border rounded;

@@ -18,14 +18,6 @@ const config = {
 
   kit: {
     adapter: adapter(),
-    browser: { hydrate: true },
-    prerender: {
-      default: true,
-      crawl: true,
-      enabled: true,
-      onError: 'fail',
-      entries: ['*']
-    },
     trailingSlash: 'always'
   }
 };
