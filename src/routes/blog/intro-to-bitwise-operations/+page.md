@@ -26,10 +26,12 @@ So the first few binary numbers from zero go like this: `0, 1, 10, 11, 100, 101,
 
 Notice that each number with a single leading 1 and trailing zeroes represents a higher power of two:
 
-`&nbsp;&nbsp;&nbsp;100`&nbsp; = 2<sup>3</sup> = 8<br/>
-`&nbsp;&nbsp;1000`&nbsp; = 2<sup>4</sup> = 16<br/>
-`&nbsp;10000`&nbsp; = 2<sup>5</sup> = 32<br/>
+`&nbsp;&nbsp;&nbsp;1000`&nbsp; = 2<sup>3</sup> = 8<br/>
+`&nbsp;&nbsp;10000`&nbsp; = 2<sup>4</sup> = 16<br/>
+`&nbsp;100000`&nbsp; = 2<sup>5</sup> = 32<br/>
 `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp; and so on.
+
+_(Edit: there was previously an error in the above, it read `100` = 2<sup>3</sup>. I have since returned to pre-school, and can now count to three correctly.)_
 
 This applies to `1` as well, because as usual in computer science, we start not with one but with zero.
 
@@ -37,7 +39,6 @@ This applies to `1` as well, because as usual in computer science, we start not 
 `10` = 2<sup>1</sup> = 2
 
 To disambiguate between decimal and binary, you might see the binary number prefixed with a zero and a lower-case `b`. So `0b10110` means 22 in binary, not 10,110 in decimal.
-
 
 ## <a id="interactive-bit" style="text-decoration: none">The Interactive Bit</a>
 
@@ -53,7 +54,7 @@ For each integer `i` starting at `0`:
 
 If in step 1 you get a number that is less than `1`, stop. Then the binary result will be the bits you already have arranged with the lowest last.
 
-This is much easier to see in practice. (NB: in the demo, `⌊X⌋` means flooring `X`.) 
+This is much easier to see in practice. (NB: in the demo, `⌊X⌋` means flooring `X`.)
 
 <div class="blog-widget">
   <DecimalToBinary/>
