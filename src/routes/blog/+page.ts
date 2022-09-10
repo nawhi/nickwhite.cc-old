@@ -1,3 +1,3 @@
-import { resolvePosts } from '$lib/resolvePosts';
+import { resolvePosts } from '../../lib/posts';
 
 export const load = async () => ({ posts: await resolvePosts() });

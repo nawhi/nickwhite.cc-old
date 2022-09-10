@@ -1,11 +1,12 @@
 <script lang="ts">
   import SummaryItem from '$lib/components/SummaryItem.svelte';
   import type { Post } from '$lib/types';
+  import { cleanPostsForDisplay } from '../posts';
 
   export let posts: Post[];
   export let limit: number = Infinity;
 
-  const postsToShow = posts.slice(0, limit).filter((post) => !post.unlisted);
+  const postsToShow = cleanPostsForDisplay(posts, limit);
 </script>
 
 {#each postsToShow as { title, href, description }}

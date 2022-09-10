@@ -18,3 +18,9 @@ export const resolvePosts = () => {
     })
   );
 };
+
+export const cleanPostsForDisplay = (posts: Post[], limit: number) =>
+  posts
+    .slice(0, limit)
+    .filter((post) => !post.unlisted)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
