@@ -30,12 +30,12 @@ export const about = {
     {
       name: 'Cloud Run Auth plugin for Insomnia',
       description: 'A plugin to add authentication headers for Google Cloud Run endpoints',
-      link: 'https://insomnia.rest/plugins/insomnia-plugin-cloud-run-auth'
+      link: 'https://github.com/nawhi/insomnia-plugin-cloud-run-auth'
     }
   ],
   experience: [
     {
-      name: 'Daaci',
+      name: 'DAACI',
       description: ['Senior Frontend Software Engineer, 2022 - pres.'],
       link: 'https://daaci.com',
       technologies: ['Node.js', 'React.js', 'Next.js', 'TypeScript', 'Material UI', 'Tailwind CSS'],
