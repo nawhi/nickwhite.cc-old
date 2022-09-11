@@ -2,8 +2,8 @@
   export let title;
 </script>
 
-<div class="block pt-12 md:flex">
-  <div class="pb-6 md:w-full md:max-w-150 md:p-0">
+<div class="block pt-12 print:pt-4 md:flex">
+  <div class="pb-6 print:pb-2 md:w-full md:max-w-150 md:p-0">
     <h2 class="font-xs font-light tracking-widest text-sm text-th-secondary leading-normal uppercase">
       {title}
     </h2>

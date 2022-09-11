@@ -12,6 +12,6 @@
     <span>
       <slot />
     </span>
-    <span class="m-2 text-xs font-light">&#x2197;</span>
+    <span class="m-2 text-xs font-light print:hidden">&#x2197;</span>
   </a>
 {/if}

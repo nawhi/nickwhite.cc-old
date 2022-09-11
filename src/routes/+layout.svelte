@@ -5,7 +5,7 @@
 
 <div class="relative h-full">
   <DotPattern />
-  <div class="p-8 relative max-w-screen-xl xs:p-24">
+  <div class="p-8 relative max-w-screen-xl xs:p-24 print:xs:p-0">
     <slot />
   </div>
 </div>

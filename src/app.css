@@ -60,6 +60,14 @@ pre[class*='language-'] {
 }
 
 @layer base {
+  @media print {
+    :root {
+      font-size: 13px;
+    }
+    @page {
+      margin: 2.5cm 1.8cm;
+    }
+  }
   body {
     @apply bg-th-background;
   }

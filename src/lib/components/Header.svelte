@@ -4,7 +4,7 @@
   import { siteMetadata } from '$lib/content/meta';
 </script>
 
-<div class="block mb-6 md:flex">
+<div class="block mb-6 md:flex print:flex">
   <div class="w-full max-w-150">
     <a href="/">
       <img
@@ -14,13 +14,17 @@
       />
     </a>
   </div>
-  <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20">
+  <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 print:pl-20">
     <h1 class="text-4xl xs:text-5xl text-th-primary font-bold leading-tight hover:text-block">
       <a href="/">{siteMetadata.name}</a>
     </h1>
-    <p class="text-th-secondary py-1 font-serif text-lg tracking-wide">{siteMetadata.description}</p>
+    <p class="text-th-secondary py-1 font-serif text-lg tracking-wide">
+      {siteMetadata.description}
+    </p>
     <SocialIcons />
-    <Sitemap />
+    <div class="print:hidden">
+      <Sitemap />
+    </div>
     <slot />
   </div>
 </div>

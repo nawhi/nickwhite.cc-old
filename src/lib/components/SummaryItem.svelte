@@ -10,25 +10,32 @@
 </script>
 
 <div class="mb-6">
-  <h3 class="font-semibold text-th-primary pb-1">
-    {#if link}
-      <Link href={link}>{name}</Link>
-    {:else}
-      {name}
-    {/if}
-  </h3>
-  <div class="text-lg text-th-secondary font-light">
-    <div class={longDesc && 'italic'}>
-      {#each toArray(shortDesc) as line}
-        <p class="pt-1">{line}</p>
-      {/each}
+  <div class="print:break-inside-avoid">
+    <h3 class="font-semibold text-th-primary pb-1">
+      {#if link}
+        <div>
+          <Link href={link}>{name}</Link>
+          <div class="hidden print:block text-xs font-light">{link}</div>
+        </div>
+      {:else}
+        {name}
+      {/if}
+    </h3>
+    <div class="text-lg text-th-secondary font-light">
+      <div class={longDesc && 'italic'}>
+        {#each toArray(shortDesc) as line}
+          <p class="pt-1">{line}</p>
+        {/each}
+      </div>
     </div>
   </div>
   {#if longDesc}
     {#if tags}
       <ul class="text-xs flex flex-wrap gap-2 pt-2 pb-1">
         {#each tags as tag}
-          <li class="px-2 dark:bg-th-subtle rounded-full border border-th-subtle dark:text-th-primary">
+          <li
+            class="px-2 dark:bg-th-subtle rounded-full border border-th-subtle dark:text-th-primary"
+          >
             {tag}
           </li>
         {/each}
