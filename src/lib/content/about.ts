@@ -100,10 +100,7 @@ export const about = {
     {
       name: 'Open University',
       description: 'Mathematics modules, part-time, 2022-present',
-      bio: [
-        'Currently studying MST124 Essential Mathematics 1.',
-        'Planning to progress to MST224 Mathematical Methods in autumn 2022.'
-      ]
+      bio: ['Essential Mathematics 1: Distinction (2022)']
     },
     {
       name: 'University of Oxford',
