@@ -40,8 +40,8 @@ export const about = {
       link: 'https://daaci.com',
       technologies: ['Node.js', 'React.js', 'Next.js', 'TypeScript', 'Material UI', 'Tailwind CSS'],
       bio: [
-        "Daaci is building a composer-focused generative music composition system using machine learning techniques informed by musicology. Its Meta-Composition Interface will have applications in realtime gaming soundtracks, fan engagement, and film & TV music composition.",
-        "I joined in August 2022 and so far have been familiarising myself with the core IP, prototyping UI designs, and exploring the Web Audio API's capabilities for live audio playback."
+        'Daaci is building a composer-focused generative music composition system using machine learning techniques informed by musicology. Its Meta-Composition Interface (MCI) will have applications in realtime gaming soundtracks, fan engagement, and film & TV music composition.',
+        'I have been focusing on building out the frontend of the MCI (in TypeScript / React), making heavy use of the Web Audio API.'
       ]
     },
     {
