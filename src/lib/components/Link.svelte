@@ -9,9 +9,6 @@
   </a>
 {:else}
   <a {href} target="_blank" rel="noopener noreferrer">
-    <span>
-      <slot />
-    </span>
-    <span class="m-2 text-xs font-light print:hidden">&#x2197;</span>
+    <slot />
   </a>
 {/if}

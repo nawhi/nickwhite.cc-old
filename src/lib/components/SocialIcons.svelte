@@ -24,7 +24,7 @@
         {href}
         target="_blank"
         rel="noreferrer"
-        class="inline-block h-4 transform transition-all duration-150 hover:scale-110 print:inline-flex print:items-center print:gap-3"
+        class="no-arrow text-th-primary inline-block h-4 transform transition-all duration-150 hover:scale-110 print:inline-flex print:items-center print:gap-3"
       >
         <Icon alt={name} />
         <span class="hidden print:block print:underline print:text-th-tertiary">{href}</span>
